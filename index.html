@@ -148,13 +148,30 @@
             background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, transparent 100%);
             color: #d4af37;
         }
-        tbody tr:nth-child(1) td.team-name { color: #d4af37; font-weight: 800; }
+        tbody tr:nth-child(1) td.team-name span { color: #d4af37; font-weight: 800; }
         tbody tr:nth-child(1) td strong { color: #d4af37; }
         
         /* Promotion Highlight */
         tbody tr:nth-child(2) td, tbody tr:nth-child(3) td, tbody tr:nth-child(4) td {
             background: linear-gradient(90deg, rgba(0, 230, 118, 0.05) 0%, transparent 100%);
         }
+
+        .shield {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .status-promoted { background: rgba(0, 230, 118, 0.15); color: #00e676; border: 1px solid rgba(0, 230, 118, 0.3); }
+        .status-playoffs { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+        .status-eliminated { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
 
     </style>
 </head>
@@ -168,6 +185,7 @@
                 <tr>
                     <th>Pos</th>
                     <th class="team-name">Clube</th>
+                    <th>Status</th>
                     <th>PTS</th>
                     <th>J</th>
                     <th>V</th>
@@ -179,7 +197,7 @@
                 </tr>
             </thead>
             <tbody id="tabela-corpo">
-                <tr><td colspan="10" class="loading">Carregando dados...</td></tr>
+                <tr><td colspan="11" class="loading">Carregando dados...</td></tr>
             </tbody>
         </table>
     </div>
@@ -199,9 +217,18 @@
             data.forEach((time, index) => {
                 const tr = document.createElement('tr');
                 tr.style.animationDelay = `${index * 0.05}s`;
+                
+                let badgeClass = 'status-eliminated';
+                if (time.status === 'Acesso à Série C') badgeClass = 'status-promoted';
+                else if (time.status === 'Mata-Mata') badgeClass = 'status-playoffs';
+
                 tr.innerHTML = `
                     <td>${index + 1}º</td>
-                    <td class="team-name">${time.time}</td>
+                    <td class="team-name">
+                        ${time.escudo_url ? `<img src="${time.escudo_url}" class="shield" alt="Escudo">` : ''}
+                        <span>${time.time}</span>
+                    </td>
+                    <td><span class="status-badge ${badgeClass}">${time.status || ''}</span></td>
                     <td><strong>${time.pontos}</strong></td>
                     <td>${time.jogos}</td>
                     <td>${time.vitorias}</td>
@@ -217,7 +244,7 @@
         .catch(error => {
             console.error('Erro ao carregar os dados:', error);
             document.getElementById('tabela-corpo').innerHTML = 
-                '<tr><td colspan="10" style="color: #ef4444; padding: 20px;">Erro ao carregar a tabela. Gere o arquivo JSON primeiro.</td></tr>';
+                '<tr><td colspan="11" style="color: #ef4444; padding: 20px;">Erro ao carregar a tabela. Gere o arquivo JSON primeiro.</td></tr>';
         });
 </script>
 

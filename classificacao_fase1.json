@@ -1,5 +1,7 @@
 [
     {
+        "club_id": "59102",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F59102%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A1",
         "time": "Manauara",
         "pontos": 22,
@@ -12,6 +14,8 @@
         "saldo_gols": 8
     },
     {
+        "club_id": "20050",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20050%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A1",
         "time": "Nacional",
         "pontos": 20,
@@ -24,6 +28,8 @@
         "saldo_gols": 6
     },
     {
+        "club_id": "21638",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21638%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A1",
         "time": "São Raimundo",
         "pontos": 13,
@@ -36,6 +42,8 @@
         "saldo_gols": 3
     },
     {
+        "club_id": "62190",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62190%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A1",
         "time": "Monte Roraima",
         "pontos": 10,
@@ -48,6 +56,8 @@
         "saldo_gols": -3
     },
     {
+        "club_id": "52844",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F52844%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A1",
         "time": "Manaus",
         "pontos": 10,
@@ -60,6 +70,8 @@
         "saldo_gols": -5
     },
     {
+        "club_id": "20353",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20353%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A1",
         "time": "Sampaio",
         "pontos": 5,
@@ -72,6 +84,8 @@
         "saldo_gols": -9
     },
     {
+        "club_id": "53757",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F53757%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A2",
         "time": "Guaporé F.c.",
         "pontos": 22,
@@ -84,6 +98,8 @@
         "saldo_gols": 10
     },
     {
+        "club_id": "56220",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F56220%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A2",
         "time": "Gazin Porto Velho",
         "pontos": 18,
@@ -96,6 +112,8 @@
         "saldo_gols": 24
     },
     {
+        "club_id": "21745",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21745%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A2",
         "time": "Araguaina Futebol E Regatas",
         "pontos": 18,
@@ -108,6 +126,8 @@
         "saldo_gols": 22
     },
     {
+        "club_id": "20380",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20380%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A2",
         "time": "Independência",
         "pontos": 15,
@@ -120,6 +140,8 @@
         "saldo_gols": 7
     },
     {
+        "club_id": "32816",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F32816%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A2",
         "time": "Galvez",
         "pontos": 10,
@@ -132,6 +154,8 @@
         "saldo_gols": -17
     },
     {
+        "club_id": "54133",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F54133%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A2",
         "time": "Humaitá",
         "pontos": 0,
@@ -144,6 +168,8 @@
         "saldo_gols": -46
     },
     {
+        "club_id": "20098",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20098%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A3",
         "time": "Gama",
         "pontos": 26,
@@ -156,6 +182,8 @@
         "saldo_gols": 17
     },
     {
+        "club_id": "21725",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21725%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A3",
         "time": "Luverdense",
         "pontos": 15,
@@ -168,6 +196,8 @@
         "saldo_gols": 1
     },
     {
+        "club_id": "62652",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62652%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A3",
         "time": "Brasiliense",
         "pontos": 14,
@@ -180,6 +210,8 @@
         "saldo_gols": 1
     },
     {
+        "club_id": "21889",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21889%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A3",
         "time": "Aparecidense",
         "pontos": 13,
@@ -192,6 +224,8 @@
         "saldo_gols": 1
     },
     {
+        "club_id": "59905",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F59905%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A3",
         "time": "Primavera Atlético Clube",
         "pontos": 12,
@@ -204,6 +238,8 @@
         "saldo_gols": -3
     },
     {
+        "club_id": "37539",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F37539%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A3",
         "time": "Inhumas E. C.",
         "pontos": 1,
@@ -216,6 +252,8 @@
         "saldo_gols": -17
     },
     {
+        "club_id": "37743",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F37743%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A4",
         "time": "Capital",
         "pontos": 23,
@@ -228,6 +266,8 @@
         "saldo_gols": 10
     },
     {
+        "club_id": "20101",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20101%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A4",
         "time": "Goiatuba",
         "pontos": 19,
@@ -240,6 +280,8 @@
         "saldo_gols": 6
     },
     {
+        "club_id": "63519",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63519%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A4",
         "time": "Ceilândia Saf",
         "pontos": 12,
@@ -252,6 +294,8 @@
         "saldo_gols": -1
     },
     {
+        "club_id": "20064",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20064%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A4",
         "time": "Mixto",
         "pontos": 12,
@@ -264,6 +308,8 @@
         "saldo_gols": 1
     },
     {
+        "club_id": "20287",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20287%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A4",
         "time": "União",
         "pontos": 9,
@@ -276,6 +322,8 @@
         "saldo_gols": -7
     },
     {
+        "club_id": "35079",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35079%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A4",
         "time": "Operário",
         "pontos": 5,
@@ -288,6 +336,8 @@
         "saldo_gols": -9
     },
     {
+        "club_id": "20810",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20810%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A5",
         "time": "Trem",
         "pontos": 20,
@@ -300,6 +350,8 @@
         "saldo_gols": 6
     },
     {
+        "club_id": "20782",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20782%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A5",
         "time": "Aguia de Maraba",
         "pontos": 18,
@@ -312,6 +364,8 @@
         "saldo_gols": 9
     },
     {
+        "club_id": "20372",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20372%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A5",
         "time": "Imperatriz",
         "pontos": 15,
@@ -324,6 +378,8 @@
         "saldo_gols": 5
     },
     {
+        "club_id": "20100",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20100%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A5",
         "time": "Tuna Luso",
         "pontos": 13,
@@ -336,6 +392,8 @@
         "saldo_gols": -3
     },
     {
+        "club_id": "20288",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20288%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A5",
         "time": "Tocantinopolis",
         "pontos": 12,
@@ -348,6 +406,8 @@
         "saldo_gols": 0
     },
     {
+        "club_id": "21829",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21829%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A5",
         "time": "Oratório",
         "pontos": 4,
@@ -360,6 +420,8 @@
         "saldo_gols": -17
     },
     {
+        "club_id": "35361",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35361%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A6",
         "time": "Iguatu",
         "pontos": 20,
@@ -372,6 +434,8 @@
         "saldo_gols": 7
     },
     {
+        "club_id": "35330",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35330%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A6",
         "time": "Maracana",
         "pontos": 19,
@@ -384,6 +448,8 @@
         "saldo_gols": 6
     },
     {
+        "club_id": "20429",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20429%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A6",
         "time": "Parnahyba",
         "pontos": 14,
@@ -396,6 +462,8 @@
         "saldo_gols": -2
     },
     {
+        "club_id": "20056",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20056%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A6",
         "time": "Sampaio Corrêa",
         "pontos": 13,
@@ -408,6 +476,8 @@
         "saldo_gols": 6
     },
     {
+        "club_id": "20029",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20029%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A6",
         "time": "Moto Club",
         "pontos": 9,
@@ -420,6 +490,8 @@
         "saldo_gols": -7
     },
     {
+        "club_id": "21894",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21894%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A6",
         "time": "Iape",
         "pontos": 4,
@@ -432,6 +504,8 @@
         "saldo_gols": -10
     },
     {
+        "club_id": "20091",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20091%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A7",
         "time": "Ferroviário",
         "pontos": 21,
@@ -444,6 +518,8 @@
         "saldo_gols": 8
     },
     {
+        "club_id": "20111",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20111%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A7",
         "time": "Piauí",
         "pontos": 17,
@@ -456,6 +532,8 @@
         "saldo_gols": 3
     },
     {
+        "club_id": "35775",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35775%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A7",
         "time": "Fluminense",
         "pontos": 14,
@@ -468,6 +546,8 @@
         "saldo_gols": 3
     },
     {
+        "club_id": "53914",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F53914%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A7",
         "time": "Altos",
         "pontos": 11,
@@ -480,6 +560,8 @@
         "saldo_gols": -6
     },
     {
+        "club_id": "62217",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62217%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A7",
         "time": "Tirol - SAF",
         "pontos": 10,
@@ -492,6 +574,8 @@
         "saldo_gols": 0
     },
     {
+        "club_id": "35316",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35316%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A7",
         "time": "Fc Atlético Cearense",
         "pontos": 7,
@@ -504,6 +588,8 @@
         "saldo_gols": -8
     },
     {
+        "club_id": "20042",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20042%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A8",
         "time": "Abc F. C.",
         "pontos": 23,
@@ -516,6 +602,8 @@
         "saldo_gols": 9
     },
     {
+        "club_id": "62025",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62025%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A8",
         "time": "America F.c. Saf",
         "pontos": 21,
@@ -528,6 +616,8 @@
         "saldo_gols": 11
     },
     {
+        "club_id": "59116",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F59116%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A8",
         "time": "Maguary",
         "pontos": 13,
@@ -540,6 +630,8 @@
         "saldo_gols": 3
     },
     {
+        "club_id": "20112",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20112%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A8",
         "time": "Central de Caruaru",
         "pontos": 13,
@@ -552,6 +644,8 @@
         "saldo_gols": 1
     },
     {
+        "club_id": "20390",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20390%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A8",
         "time": "Sousa",
         "pontos": 10,
@@ -564,6 +658,8 @@
         "saldo_gols": -7
     },
     {
+        "club_id": "60415",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F60415%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A8",
         "time": "Laguna",
         "pontos": 2,
@@ -576,6 +672,8 @@
         "saldo_gols": -17
     },
     {
+        "club_id": "20071",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20071%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A9",
         "time": "Treze",
         "pontos": 17,
@@ -588,6 +686,8 @@
         "saldo_gols": 4
     },
     {
+        "club_id": "20034",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20034%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A9",
         "time": "Sergipe",
         "pontos": 15,
@@ -600,6 +700,8 @@
         "saldo_gols": 2
     },
     {
+        "club_id": "37846",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F37846%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A9",
         "time": "Serra Branca Esporte Clube",
         "pontos": 15,
@@ -612,6 +714,8 @@
         "saldo_gols": 4
     },
     {
+        "club_id": "35680",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35680%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A9",
         "time": "Lagarto F.c.",
         "pontos": 13,
@@ -624,6 +728,8 @@
         "saldo_gols": -1
     },
     {
+        "club_id": "55531",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F55531%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A9",
         "time": "Retrô",
         "pontos": 12,
@@ -636,6 +742,8 @@
         "saldo_gols": -2
     },
     {
+        "club_id": "35768",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35768%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A9",
         "time": "Decisão",
         "pontos": 8,
@@ -648,6 +756,8 @@
         "saldo_gols": -7
     },
     {
+        "club_id": "20045",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20045%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A10",
         "time": "Csa",
         "pontos": 21,
@@ -660,6 +770,8 @@
         "saldo_gols": 17
     },
     {
+        "club_id": "35212",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35212%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A10",
         "time": "Juazeirense",
         "pontos": 17,
@@ -672,6 +784,8 @@
         "saldo_gols": 3
     },
     {
+        "club_id": "20108",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20108%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A10",
         "time": "Asa",
         "pontos": 16,
@@ -684,6 +798,8 @@
         "saldo_gols": 4
     },
     {
+        "club_id": "35152",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35152%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A10",
         "time": "Jacuipense",
         "pontos": 13,
@@ -696,6 +812,8 @@
         "saldo_gols": -2
     },
     {
+        "club_id": "35522",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35522%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A10",
         "time": "Cse",
         "pontos": 9,
@@ -708,6 +826,8 @@
         "saldo_gols": -7
     },
     {
+        "club_id": "20236",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20236%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A10",
         "time": "Atlético de Alagoinhas",
         "pontos": 5,
@@ -720,6 +840,8 @@
         "saldo_gols": -15
     },
     {
+        "club_id": "64223",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64223%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A11",
         "time": "Uberlândia Saf",
         "pontos": 18,
@@ -732,6 +854,8 @@
         "saldo_gols": 4
     },
     {
+        "club_id": "34709",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F34709%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A11",
         "time": "Betim Futebol",
         "pontos": 15,
@@ -744,6 +868,8 @@
         "saldo_gols": 3
     },
     {
+        "club_id": "64669",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64669%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A11",
         "time": "CRAC",
         "pontos": 13,
@@ -756,6 +882,8 @@
         "saldo_gols": 0
     },
     {
+        "club_id": "21817",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21817%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A11",
         "time": "Ivinhema Futebol Clube",
         "pontos": 13,
@@ -768,6 +896,8 @@
         "saldo_gols": -3
     },
     {
+        "club_id": "63665",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63665%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A11",
         "time": "Abecat Saf",
         "pontos": 12,
@@ -780,6 +910,8 @@
         "saldo_gols": -1
     },
     {
+        "club_id": "20041",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20041%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A11",
         "time": "Operário",
         "pontos": 9,
@@ -792,6 +924,8 @@
         "saldo_gols": -3
     },
     {
+        "club_id": "20432",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20432%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A12",
         "time": "Democrata",
         "pontos": 17,
@@ -804,6 +938,8 @@
         "saldo_gols": 4
     },
     {
+        "club_id": "34027",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F34027%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A12",
         "time": "Tombense",
         "pontos": 17,
@@ -816,6 +952,8 @@
         "saldo_gols": 7
     },
     {
+        "club_id": "20081",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20081%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A12",
         "time": "Vitoria F. C.",
         "pontos": 15,
@@ -828,6 +966,8 @@
         "saldo_gols": 4
     },
     {
+        "club_id": "62546",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62546%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A12",
         "time": "Rio Branco",
         "pontos": 13,
@@ -840,6 +980,8 @@
         "saldo_gols": 2
     },
     {
+        "club_id": "62328",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62328%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A12",
         "time": "Porto Sport Club",
         "pontos": 10,
@@ -852,6 +994,8 @@
         "saldo_gols": -12
     },
     {
+        "club_id": "21942",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21942%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A12",
         "time": "Real Noroeste Capixaba F. C.",
         "pontos": 8,
@@ -864,6 +1008,8 @@
         "saldo_gols": -5
     },
     {
+        "club_id": "63521",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63521%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A13",
         "time": "Portuguesa Saf",
         "pontos": 21,
@@ -876,6 +1022,8 @@
         "saldo_gols": 10
     },
     {
+        "club_id": "31399",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F31399%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A13",
         "time": "Água Santa",
         "pontos": 17,
@@ -888,6 +1036,8 @@
         "saldo_gols": 8
     },
     {
+        "club_id": "20805",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20805%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A13",
         "time": "Portuguesa",
         "pontos": 14,
@@ -900,6 +1050,8 @@
         "saldo_gols": 5
     },
     {
+        "club_id": "20046",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20046%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A13",
         "time": "América",
         "pontos": 12,
@@ -912,6 +1064,8 @@
         "saldo_gols": -10
     },
     {
+        "club_id": "20249",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20249%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A13",
         "time": "Madureira",
         "pontos": 11,
@@ -924,6 +1078,8 @@
         "saldo_gols": -5
     },
     {
+        "club_id": "63322",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63322%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A13",
         "time": "Pouso Alegre Saf",
         "pontos": 7,
@@ -936,6 +1092,8 @@
         "saldo_gols": -8
     },
     {
+        "club_id": "20072",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20072%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A14",
         "time": "Xv de Piracicaba",
         "pontos": 17,
@@ -948,6 +1106,8 @@
         "saldo_gols": 5
     },
     {
+        "club_id": "20082",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20082%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A14",
         "time": "Noroeste",
         "pontos": 15,
@@ -960,6 +1120,8 @@
         "saldo_gols": 5
     },
     {
+        "club_id": "31535",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F31535%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A14",
         "time": "Velo Clube",
         "pontos": 13,
@@ -972,6 +1134,8 @@
         "saldo_gols": 0
     },
     {
+        "club_id": "32387",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F32387%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A14",
         "time": "Sampaio Correa",
         "pontos": 12,
@@ -984,6 +1148,8 @@
         "saldo_gols": -2
     },
     {
+        "club_id": "64287",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64287%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A14",
         "time": "Nova Iguaçu Saf",
         "pontos": 12,
@@ -996,6 +1162,8 @@
         "saldo_gols": -3
     },
     {
+        "club_id": "32036",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F32036%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A14",
         "time": "Marica",
         "pontos": 11,
@@ -1008,6 +1176,8 @@
         "saldo_gols": -5
     },
     {
+        "club_id": "39727",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F39727%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A15",
         "time": "Santa Catarina Clube",
         "pontos": 19,
@@ -1020,6 +1190,8 @@
         "saldo_gols": 6
     },
     {
+        "club_id": "20816",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20816%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A15",
         "time": "Leão do Vale - Cianorte",
         "pontos": 16,
@@ -1032,6 +1204,8 @@
         "saldo_gols": 1
     },
     {
+        "club_id": "21922",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21922%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A15",
         "time": "Cascavel",
         "pontos": 15,
@@ -1044,6 +1218,8 @@
         "saldo_gols": 5
     },
     {
+        "club_id": "33061",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F33061%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A15",
         "time": "São Luiz",
         "pontos": 15,
@@ -1056,6 +1232,8 @@
         "saldo_gols": 2
     },
     {
+        "club_id": "20076",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20076%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A15",
         "time": "Joinville",
         "pontos": 15,
@@ -1068,6 +1246,8 @@
         "saldo_gols": 2
     },
     {
+        "club_id": "20225",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20225%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A15",
         "time": "Guarany FC",
         "pontos": 4,
@@ -1080,6 +1260,8 @@
         "saldo_gols": -16
     },
     {
+        "club_id": "63571",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63571%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A16",
         "time": "Blumenau",
         "pontos": 19,
@@ -1092,6 +1274,8 @@
         "saldo_gols": 6
     },
     {
+        "club_id": "20207",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20207%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A16",
         "time": "Marcílio Dias",
         "pontos": 16,
@@ -1104,6 +1288,8 @@
         "saldo_gols": 4
     },
     {
+        "club_id": "54488",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F54488%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A16",
         "time": "Sãojoseense",
         "pontos": 13,
@@ -1116,6 +1302,8 @@
         "saldo_gols": -1
     },
     {
+        "club_id": "20319",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20319%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A16",
         "time": "São José",
         "pontos": 13,
@@ -1128,6 +1316,8 @@
         "saldo_gols": -2
     },
     {
+        "club_id": "64810",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64810%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A16",
         "time": "Gremio Esportivo Brasil SAF",
         "pontos": 10,
@@ -1140,6 +1330,8 @@
         "saldo_gols": -3
     },
     {
+        "club_id": "56804",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F56804%2Fescudo.jpg&w=256&q=70",
         "grupo_origem": "GRUPO A16",
         "time": "Azuriz",
         "pontos": 9,
