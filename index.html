@@ -280,7 +280,7 @@
             tr.innerHTML = `
                 <td>${index + 1}º</td>
                 <td class="team-name">
-                    ${time.escudo_url ? \`<img src="\${time.escudo_url}" class="shield" alt="Escudo">\` : ''}
+                    ${time.escudo_url ? `<img src="${time.escudo_url}" class="shield" alt="Escudo">` : ''}
                     <span>${time.time}</span>
                 </td>
                 <td><span class="status-badge ${badgeClass}">${time.status || ''}</span></td>
