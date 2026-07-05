@@ -102,7 +102,7 @@
 
         .match-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 20px;
         }
 
@@ -117,16 +117,16 @@
         }
 
         .team-row {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 50px 50px;
+            gap: 10px;
             align-items: center;
-            justify-content: space-between;
         }
 
         .team-info {
             display: flex;
             align-items: center;
             gap: 10px;
-            flex: 1;
             font-weight: 600;
         }
 
@@ -140,7 +140,7 @@
         }
 
         .score-input {
-            width: 45px;
+            width: 50px;
             height: 35px;
             text-align: center;
             background: var(--bg-main);
@@ -157,11 +157,26 @@
             border-color: var(--primary);
         }
 
+        .real-score {
+            background: rgba(16, 185, 129, 0.1) !important;
+            border-color: rgba(16, 185, 129, 0.3) !important;
+            color: #34d399 !important;
+        }
+
+        .score-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
         .vs {
             text-align: center;
             font-size: 0.8rem;
             color: var(--text-muted);
             margin: 5px 0;
+            grid-column: 1 / -1;
         }
 
         .rules-info {
@@ -202,8 +217,9 @@
     </div>
 
     <div class="rules-info">
-        <strong>Como funciona a Série D?</strong><br>
-        A partir da 3ª Fase (Oitavas), os confrontos são definidos pela <strong>Campanha Geral</strong> acumulada (Pontos, Vitórias, Saldo). O 1º melhor enfrenta o pior (último), o 2º enfrenta o penúltimo, etc. O simulador fará esse recálculo automaticamente!
+        <strong>Como funciona a Simulação?</strong><br>
+        Os jogos de Ida ou Volta que já aconteceram e constam no site da CBF aparecem <strong>verdes e bloqueados</strong> (pois já somam na campanha). Preencha apenas os campos em branco para prever o restante do mata-mata.<br><br>
+        <strong>Regra de Ouro:</strong> A partir das <strong>Quartas de Final (Jogo do Acesso)</strong>, os confrontos abandonam o chaveamento atual e são redefinidos pela <strong>Campanha Geral</strong> acumulada de todas as fases. O 1º melhor enfrenta o 8º, o 2º enfrenta o 7º, etc. O simulador faz isso automaticamente!
     </div>
 
     <h2 class="fase-title" id="fase-label">Carregando dados...</h2>
@@ -212,7 +228,7 @@
         <!-- Partidas serão injetadas aqui -->
     </div>
 
-    <button class="btn-acao" id="btn-avancar" style="display: none;" onclick="avancarFase()">Avançar para a Próxima Fase 🚀</button>
+    <button class="btn-acao" id="btn-avancar" style="display: none;" onclick="avancarFase()">Simular Resultados e Avançar Fase 🚀</button>
 
     <div id="ranking-modal">
         <h3>Classificação Geral Acumulada (Semente para Sorteio)</h3>
@@ -233,7 +249,7 @@
 
 <script>
     let times = {}; // Dicionário de estatísticas atuais
-    let confrontosAtuais = []; // Array de pares [{m: ID, v: ID}]
+    let confrontosAtuais = []; // Array de pares complexos {tA, tB, ida, volta}
     let faseAtualNivel = 2; 
     
     const nomesFases = {
@@ -249,7 +265,6 @@
         "2ª Fase": 2, "3ª Fase": 3, "Oitavas de Final": 4, "Quartas de Final": 5, "Semifinal": 6, "Final": 7
     };
 
-    // 1. Carregar os dados reais
     async function inicializar() {
         try {
             const resTabela = await fetch('tabela_geral.json?v=' + new Date().getTime());
@@ -288,8 +303,8 @@
             faseAtualNivel = maxNivel;
             const jogosFaseAtual = jogosData.filter(j => j.nome_fase === nomeMaxFase);
             
-            // Agrupar confrontos únicos
-            let pares = new Set();
+            // Agrupar confrontos com Ida e Volta
+            let paresMap = new Map();
             let matchesCurrent = [];
             
             jogosFaseAtual.forEach(j => {
@@ -297,9 +312,31 @@
                 let vis = j.visitante_id || j.visitante;
                 let pairId = [mand, vis].sort().join('-');
                 
-                if (!pares.has(pairId)) {
-                    pares.add(pairId);
-                    matchesCurrent.push({ m: mand, v: vis });
+                if (!paresMap.has(pairId)) {
+                    let obj = {
+                        pairId: pairId, tA: mand, tB: vis,
+                        ida: { pm: null, pv: null, isReal: false },
+                        volta: { pm: null, pv: null, isReal: false }
+                    };
+                    paresMap.set(pairId, obj);
+                    matchesCurrent.push(obj);
+                }
+                
+                let p = paresMap.get(pairId);
+                if (j.fase === "Ida") {
+                    p.tA = mand; p.tB = vis; // Garante que tA é o mandante da Ida
+                    if(j.placar_mandante !== null) {
+                        p.ida.pm = j.placar_mandante;
+                        p.ida.pv = j.placar_visitante;
+                        p.ida.isReal = true;
+                    }
+                } else if (j.fase === "Volta") {
+                    // Na Volta, o mandante é o Visitante da Ida (tB) e vice-versa
+                    if(j.placar_mandante !== null) {
+                        p.volta.pm = j.placar_mandante;
+                        p.volta.pv = j.placar_visitante;
+                        p.volta.isReal = true;
+                    }
                 }
             });
 
@@ -322,27 +359,47 @@
         container.innerHTML = '';
         
         confrontosAtuais.forEach((par, index) => {
-            let t1 = times[par.m];
-            let t2 = times[par.v];
+            let tA = times[par.tA];
+            let tB = times[par.tB];
             
-            if(!t1 || !t2) return;
+            if(!tA || !tB) return;
+
+            // Placar real ou string vazia para a simulação
+            let idaA = par.ida.isReal ? par.ida.pm : '';
+            let idaB = par.ida.isReal ? par.ida.pv : '';
+            // Na volta, o tA jogou como visitante
+            let volA = par.volta.isReal ? par.volta.pv : ''; 
+            let volB = par.volta.isReal ? par.volta.pm : ''; 
+            
+            let idA_attr = par.ida.isReal ? 'disabled class="score-input p1-ida real-score"' : 'class="score-input p1-ida"';
+            let idB_attr = par.ida.isReal ? 'disabled class="score-input p2-ida real-score"' : 'class="score-input p2-ida"';
+            
+            let volA_attr = par.volta.isReal ? 'disabled class="score-input p1-vol real-score"' : 'class="score-input p1-vol"';
+            let volB_attr = par.volta.isReal ? 'disabled class="score-input p2-vol real-score"' : 'class="score-input p2-vol"';
 
             container.innerHTML += `
                 <div class="match-card" data-index="${index}">
-                    <div class="team-row">
-                        <div class="team-info">
-                            ${t1.escudo ? `<img src="${t1.escudo}" class="shield">` : ''}
-                            <span>${t1.nome.split(' - ')[0]}</span>
-                        </div>
-                        <input type="number" class="score-input p1-score" min="0" placeholder="0" title="Gols do jogo simulado">
+                    <div style="display: grid; grid-template-columns: 1fr 50px 50px; gap: 10px; margin-bottom: 5px;">
+                        <div></div>
+                        <div class="score-label">IDA</div>
+                        <div class="score-label">VOLTA</div>
                     </div>
-                    <div class="vs">Gols da Simulação (Restantes)</div>
                     <div class="team-row">
                         <div class="team-info">
-                            ${t2.escudo ? `<img src="${t2.escudo}" class="shield">` : ''}
-                            <span>${t2.nome.split(' - ')[0]}</span>
+                            ${tA.escudo ? `<img src="${tA.escudo}" class="shield">` : ''}
+                            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${tA.nome}">${tA.nome.split(' - ')[0]}</span>
                         </div>
-                        <input type="number" class="score-input p2-score" min="0" placeholder="0" title="Gols do jogo simulado">
+                        <input type="number" ${idA_attr} min="0" placeholder="?" value="${idaA}">
+                        <input type="number" ${volA_attr} min="0" placeholder="?" value="${volA}">
+                    </div>
+                    <div class="vs">MATA-MATA</div>
+                    <div class="team-row">
+                        <div class="team-info">
+                            ${tB.escudo ? `<img src="${tB.escudo}" class="shield">` : ''}
+                            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${tB.nome}">${tB.nome.split(' - ')[0]}</span>
+                        </div>
+                        <input type="number" ${idB_attr} min="0" placeholder="?" value="${idaB}">
+                        <input type="number" ${volB_attr} min="0" placeholder="?" value="${volB}">
                     </div>
                 </div>
             `;
@@ -358,35 +415,51 @@
         let erro = false;
         
         cards.forEach((card, i) => {
-            let p1Score = parseInt(card.querySelector('.p1-score').value);
-            let p2Score = parseInt(card.querySelector('.p2-score').value);
+            let par = confrontosAtuais[i];
+            let tA = times[par.tA];
+            let tB = times[par.tB];
+
+            let idaA = parseInt(card.querySelector('.p1-ida').value);
+            let idaB = parseInt(card.querySelector('.p2-ida').value);
+            let volA = parseInt(card.querySelector('.p1-vol').value);
+            let volB = parseInt(card.querySelector('.p2-vol').value);
             
-            if (isNaN(p1Score) || isNaN(p2Score)) {
-                p1Score = Math.floor(Math.random() * 3);
-                p2Score = Math.floor(Math.random() * 3);
-                while(p1Score === p2Score) { p2Score = Math.floor(Math.random() * 3); }
-                card.querySelector('.p1-score').value = p1Score;
-                card.querySelector('.p2-score').value = p2Score;
-            } else if (p1Score === p2Score) {
-                alert("Para a simulação, defina um vencedor (não deixe empates, simule pênaltis adicionando 1 gol fictício ao vencedor para o cálculo funcionar).");
+            if (isNaN(idaA) || isNaN(idaB)) {
+                idaA = Math.floor(Math.random() * 3); idaB = Math.floor(Math.random() * 3);
+                card.querySelector('.p1-ida').value = idaA; card.querySelector('.p2-ida').value = idaB;
+            }
+            if (isNaN(volA) || isNaN(volB)) {
+                volA = Math.floor(Math.random() * 3); volB = Math.floor(Math.random() * 3);
+                if ((idaA+volA) === (idaB+volB)) volA++;
+                card.querySelector('.p1-vol').value = volA; card.querySelector('.p2-vol').value = volB;
+            } else if ((idaA+volA) === (idaB+volB)) {
+                alert("O placar agregado empatou. Adicione 1 gol fictício ao vencedor para evitar empates no mata-mata da simulação.");
                 erro = true;
             }
             
             if(erro) return;
 
-            let par = confrontosAtuais[i];
-            let t1 = times[par.m];
-            let t2 = times[par.v];
+            // Só somamos as pontuações na campanha geral se a partida NÃO for real.
+            // Partidas reais já foram computadas no backend no arquivo tabela_geral.json
+            if(!par.ida.isReal) {
+                tA.gp += idaA; tA.gc += idaB; tA.sg += (idaA - idaB);
+                tB.gp += idaB; tB.gc += idaA; tB.sg += (idaB - idaA);
+                if(idaA > idaB) { tA.v++; tA.pts+=3; }
+                else if(idaB > idaA) { tB.v++; tB.pts+=3; }
+                else { tA.pts+=1; tB.pts+=1; }
+            }
+            if(!par.volta.isReal) {
+                tA.gp += volA; tA.gc += volB; tA.sg += (volA - volB);
+                tB.gp += volB; tB.gc += volA; tB.sg += (volB - volA);
+                if(volA > volB) { tA.v++; tA.pts+=3; }
+                else if(volB > volA) { tB.v++; tB.pts+=3; }
+                else { tA.pts+=1; tB.pts+=1; }
+            }
             
-            t1.gp += p1Score; t1.gc += p2Score; t1.sg += (p1Score - p2Score);
-            t2.gp += p2Score; t2.gc += p1Score; t2.sg += (p2Score - p1Score);
-            
-            if(p1Score > p2Score) {
-                t1.v += 1; t1.pts += 3;
-                vencedores.push(t1);
+            if ((idaA+volA) > (idaB+volB)) {
+                vencedores.push(tA);
             } else {
-                t2.v += 1; t2.pts += 3;
-                vencedores.push(t2);
+                vencedores.push(tB);
             }
         });
         
@@ -399,14 +472,12 @@
         }
 
         if(faseAtualNivel === 4) {
-            alert("Os vencedores desta próxima rodada garantirão o acesso à Série C!");
+            alert("Atenção: Os próximos vencedores garantirão o ACESSO À SÉRIE C!");
         } else if (faseAtualNivel === 5) {
-            alert("🎉 ACESSO DEFINIDO! Estes times estariam na Série C!");
+            alert("🎉 ACESSO DEFINIDO! Estes 4 times estariam na Série C!");
         }
 
         // A regra oficial diz: a classificação geral só é levada em conta nas QUARTAS DE FINAL (Fase 5) em diante.
-        // Fases 3 e 4 seguem o chaveamento fixo (vencedor 1 x vencedor 2).
-        
         let vencedores_rankeados = [...vencedores];
         vencedores_rankeados.sort((a, b) => {
             if (b.pts !== a.pts) return b.pts - a.pts;
@@ -421,21 +492,23 @@
         let n = vencedores.length;
         
         if (faseAtualNivel >= 4) {
-            // Transição para as QUARTAS DE FINAL (ou frente)
-            // Ranking Geral: 1º x 8º, 2º x 7º, etc
+            // Transição para as QUARTAS DE FINAL (ou frente) -> Ranking Geral
             for(let i=0; i < n/2; i++) {
                 novosConfrontos.push({
-                    m: vencedores_rankeados[i].id,
-                    v: vencedores_rankeados[n - 1 - i].id
+                    tA: vencedores_rankeados[i].id,
+                    tB: vencedores_rankeados[n - 1 - i].id,
+                    ida: { pm: null, pv: null, isReal: false },
+                    volta: { pm: null, pv: null, isReal: false }
                 });
             }
         } else {
-            // Transição para Fase 3 ou Fase 4 (Oitavas)
-            // Chaveamento fixo: Vencedor Jogo 1 x Vencedor Jogo 2
+            // Transição para Oitavas -> Chaveamento fixo (vencedor Jogo 1 x vencedor Jogo 2)
             for(let i=0; i < n; i+=2) {
                 novosConfrontos.push({
-                    m: vencedores[i].id,
-                    v: vencedores[i+1].id
+                    tA: vencedores[i].id,
+                    tB: vencedores[i+1].id,
+                    ida: { pm: null, pv: null, isReal: false },
+                    volta: { pm: null, pv: null, isReal: false }
                 });
             }
         }
@@ -446,7 +519,7 @@
         setTimeout(() => {
             renderizarFase();
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 4000); // 4 segundos para o usuário ver o ranking pop-up
+        }, 4000); 
     }
     
     function mostrarRanking(vencedores) {
@@ -465,7 +538,7 @@
             `;
         });
         
-        let txt = faseAtualNivel >= 4 ? 'Cruzando as chaves pelo Ranking Geral (Campanha)...' : 'Avançando no Chaveamento Fixo...';
+        let txt = faseAtualNivel >= 4 ? 'Cruzando as chaves das Quartas pelo Ranking Geral (Campanha)...' : 'Avançando as Oitavas no Chaveamento Fixo...';
         document.getElementById('match-container').innerHTML = `<h3 style="color:var(--primary); text-align:center; width:100%; padding:30px;">${txt}</h3>`;
         document.getElementById('btn-avancar').style.display = 'none';
     }
