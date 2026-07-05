@@ -178,6 +178,22 @@
             letter-spacing: 1px;
             text-align: center;
         }
+        
+        .badge-real {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.6);
+            color: #34d399;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .badge-sim {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            color: #e2e8f0;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
 
         .vs {
             text-align: center;
@@ -226,7 +242,8 @@
 
     <div class="rules-info">
         <strong>Como funciona a Simulação?</strong><br>
-        Os jogos de Ida ou Volta que já aconteceram e constam no site da CBF aparecem <strong>verdes e bloqueados</strong> (pois já somam na campanha). Preencha apenas os campos em branco para prever o restante do mata-mata.<br><br>
+        Os jogos que já aconteceram e constam no site da CBF aparecem bloqueados (cor verde) e o rótulo da coluna ganha uma <span class="badge-real" style="font-size:0.7rem; display:inline-block; transform:translateY(-1px);">BORDA VERDE CONTÍNUA</span>. 
+        As partidas que ainda faltam ou que você está prevendo ganham uma <span class="badge-sim" style="font-size:0.7rem; display:inline-block; transform:translateY(-1px);">BORDA TRACEJADA</span>, indicando que as caixas brancas estão prontas para receberem seus palpites.<br><br>
         <strong>Regra de Ouro:</strong> A partir das <strong>Quartas de Final (Jogo do Acesso)</strong>, os confrontos abandonam o chaveamento atual e são redefinidos pela <strong>Campanha Geral</strong> acumulada de todas as fases. O 1º melhor enfrenta o 8º, o 2º enfrenta o 7º, etc. O simulador faz isso automaticamente!
     </div>
 
@@ -385,15 +402,15 @@
             let volA_attr = par.volta.isReal ? 'disabled class="score-input p1-vol real-score"' : 'class="score-input p1-vol"';
             let volB_attr = par.volta.isReal ? 'disabled class="score-input p2-vol real-score"' : 'class="score-input p2-vol"';
 
-            let labelIda = par.ida.isReal ? 'IDA ✅' : 'IDA ✏️';
-            let labelVolta = par.volta.isReal ? 'VOLTA ✅' : 'VOLTA ✏️';
+            let classIda = par.ida.isReal ? 'badge-real' : 'badge-sim';
+            let classVolta = par.volta.isReal ? 'badge-real' : 'badge-sim';
 
             container.innerHTML += `
                 <div class="match-card" data-index="${index}">
                     <div style="display: grid; grid-template-columns: 1fr 50px 50px; gap: 10px; margin-bottom: 5px;">
                         <div></div>
-                        <div class="score-label" title="${par.ida.isReal ? 'Resultado Oficial (Já somado na campanha)' : 'Simule este jogo'}">${labelIda}</div>
-                        <div class="score-label" title="${par.volta.isReal ? 'Resultado Oficial (Já somado na campanha)' : 'Simule este jogo'}">${labelVolta}</div>
+                        <div class="score-label ${classIda}" title="${par.ida.isReal ? 'Resultado Oficial (Já somado na campanha)' : 'Simule este jogo'}">IDA</div>
+                        <div class="score-label ${classVolta}" title="${par.volta.isReal ? 'Resultado Oficial (Já somado na campanha)' : 'Simule este jogo'}">VOLTA</div>
                     </div>
                     <div class="team-row">
                         <div class="team-info">
