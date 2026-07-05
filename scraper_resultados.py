@@ -6,7 +6,7 @@ import json
 # Suprime o aviso de certificado inválido
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-def extrair_partidas_fase(url_fase):
+def extrair_partidas_fase(url_fase, nome_fase="Mata-Mata"):
     headers = {
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
@@ -81,6 +81,7 @@ def extrair_partidas_fase(url_fase):
                 continue
                 
             lista_partidas.append({
+                "nome_fase": nome_fase,
                 "grupo": grupo,
                 "fase": ida_volta,
                 "jogo": num_jogo,
@@ -116,12 +117,14 @@ def obter_fases_mata_mata():
                         full_url = a['href']
                         if not full_url.startswith('http'):
                             full_url = 'https://www.cbf.com.br' + full_url
-                        fases.append(full_url)
+                        fases.append((full_url, txt))
         # Manter a ordem preservando unicos
         fases_unicas = []
+        urls_vistas = set()
         for f in fases:
-            if f not in fases_unicas:
+            if f[0] not in urls_vistas:
                 fases_unicas.append(f)
+                urls_vistas.add(f[0])
         return fases_unicas
     except Exception as e:
         print(f"Erro ao buscar fases: {e}")
@@ -134,8 +137,8 @@ if __name__ == "__main__":
     todas_as_partidas = []
     
     # Roda o scraper para cada link e junta na mesma panela
-    for link in fases_mata_mata:
-        partidas_da_fase = extrair_partidas_fase(link)
+    for link, nome_fase in fases_mata_mata:
+        partidas_da_fase = extrair_partidas_fase(link, nome_fase)
         if partidas_da_fase:
             todas_as_partidas.extend(partidas_da_fase)
             

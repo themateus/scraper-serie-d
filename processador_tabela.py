@@ -12,15 +12,15 @@ def processar_tabela_geral():
     
     tabela_geral = {}
     
-    # Mapeamento das letras de grupos da CBF para o nome da fase
-    fase_map = {
-        'A': (1, '1ª Fase'),
-        'B': (2, '2ª Fase'),
-        'C': (3, '3ª Fase'),
-        'D': (4, 'Oitavas'),
-        'E': (5, 'Quartas'),
-        'F': (6, 'Semifinal'),
-        'G': (7, 'Final')
+    # Mapeamento do nível da fase (para saber qual fase foi mais longe)
+    fase_nivel_map = {
+        '1ª Fase': 1,
+        '2ª Fase': 2,
+        '3ª Fase': 3,
+        'Oitavas': 4,
+        'Quartas': 5,
+        'Semifinal': 6,
+        'Final': 7
     }
     
     for t in times_fase1:
@@ -50,10 +50,16 @@ def processar_tabela_geral():
         gols_m = jogo["placar_mandante"]
         gols_v = jogo["placar_visitante"]
         
-        # Descobre qual é a fase atual baseada na letra do grupo (Ex: GRUPO B01 -> B)
-        grupo_match = jogo.get("grupo", "")
-        letra = grupo_match.split()[1][0] if " " in grupo_match and len(grupo_match.split()) > 1 else 'B'
-        nivel, nome_fase = fase_map.get(letra, (2, "Mata-Mata"))
+        # Descobre qual é a fase atual baseada no texto que a CBF colocou na página (ex: "2ª Fase")
+        fase_texto_cbf = jogo.get("nome_fase", "Mata-Mata")
+        
+        nivel = 2
+        nome_fase = "Mata-Mata"
+        for key, val in fase_nivel_map.items():
+            if key in fase_texto_cbf:
+                nivel = val
+                nome_fase = key
+                break
 
         if chave_m in tabela_geral and chave_v in tabela_geral:
             # Atualiza o status/fase máxima que o time alcançou

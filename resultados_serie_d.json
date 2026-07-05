@@ -1,5 +1,6 @@
 [
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B01",
         "fase": "Ida",
         "jogo": "Jogo 481",
@@ -14,6 +15,7 @@
         "detalhes": "21/06/2026 |  -  | 18:00 |  Rio Branco  |  -  |  AC | Arena da Floresta"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B02",
         "fase": "Ida",
         "jogo": "Jogo 482",
@@ -28,6 +30,7 @@
         "detalhes": "21/06/2026 |  -  | 18:00 |  Boa Vista  |  -  |  RR | Canarinho"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B03",
         "fase": "Ida",
         "jogo": "Jogo 483",
@@ -42,6 +45,7 @@
         "detalhes": "20/06/2026 |  -  | 18:00 |  Boa Vista  |  -  |  RR | Canarinho"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B04",
         "fase": "Ida",
         "jogo": "Jogo 484",
@@ -56,6 +60,7 @@
         "detalhes": "21/06/2026 |  -  | 18:00 |  Araguaina  |  -  |  TO | Mirandão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B05",
         "fase": "Ida",
         "jogo": "Jogo 485",
@@ -70,6 +75,7 @@
         "detalhes": "20/06/2026 |  -  | 18:00 |  Cuiaba  |  -  |  MT | Dutrinha"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B06",
         "fase": "Ida",
         "jogo": "Jogo 486",
@@ -84,6 +90,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  Brasilia  |  -  |  DF | Boca do Jacaré / Serejão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B07",
         "fase": "Ida",
         "jogo": "Jogo 487",
@@ -98,6 +105,7 @@
         "detalhes": "20/06/2026 |  -  | 16:00 |  Aparecida de Goiania  |  -  |  GO | Anibal Batista de Toledo"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B08",
         "fase": "Ida",
         "jogo": "Jogo 488",
@@ -112,6 +120,7 @@
         "detalhes": "20/06/2026 |  -  | 16:00 |  Ceilândia  |  -  |  DF | Maria Abadia"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B09",
         "fase": "Ida",
         "jogo": "Jogo 489",
@@ -126,6 +135,7 @@
         "detalhes": "21/06/2026 |  -  | 17:00 |  Sao Luis  |  -  |  MA | Castelão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B10",
         "fase": "Ida",
         "jogo": "Jogo 490",
@@ -140,6 +150,7 @@
         "detalhes": "20/06/2026 |  -  | 16:00 |  Imperatriz  |  -  |  MA | Frei Epifânio"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B11",
         "fase": "Ida",
         "jogo": "Jogo 491",
@@ -154,6 +165,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  Belem  |  -  |  PA | Mangueirão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B12",
         "fase": "Ida",
         "jogo": "Jogo 492",
@@ -168,6 +180,7 @@
         "detalhes": "21/06/2026 |  -  | 15:00 |  Parnaiba  |  -  |  PI | Mão Santa"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B13",
         "fase": "Ida",
         "jogo": "Jogo 493",
@@ -182,6 +195,7 @@
         "detalhes": "21/06/2026 |  -  | 15:00 |  Caruaru  |  -  |  PE | Lacerdão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B14",
         "fase": "Ida",
         "jogo": "Jogo 494",
@@ -196,6 +210,7 @@
         "detalhes": "20/06/2026 |  -  | 16:00 |  Teresina  |  -  |  PI | Lindolfo Monteiro"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B15",
         "fase": "Ida",
         "jogo": "Jogo 495",
@@ -210,6 +225,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  Teresina  |  -  |  PI | Lindolfo Monteiro"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B16",
         "fase": "Ida",
         "jogo": "Jogo 496",
@@ -224,6 +240,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  São Lourenço da Mata  |  -  |  PE | Arena Pernambuco"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B17",
         "fase": "Ida",
         "jogo": "Jogo 497",
@@ -238,6 +255,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  Feira de Santana  |  -  |  BA | Arena Cajueiro"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B18",
         "fase": "Ida",
         "jogo": "Jogo 498",
@@ -252,6 +270,7 @@
         "detalhes": "21/06/2026 |  -  | 16:30 |  Campina Grande  |  -  |  PB | Amigão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B19",
         "fase": "Ida",
         "jogo": "Jogo 499",
@@ -266,6 +285,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  Lagarto  |  -  |  SE | Barretão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B20",
         "fase": "Ida",
         "jogo": "Jogo 500",
@@ -280,6 +300,7 @@
         "detalhes": "21/06/2026 |  -  | 17:00 |  Arapiraca  |  -  |  AL | Coaracy Fonseca"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B21",
         "fase": "Ida",
         "jogo": "Jogo 501",
@@ -294,6 +315,7 @@
         "detalhes": "21/06/2026 |  -  | 17:00 |  Cariacica  |  -  |  ES | Kleber Andrade"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B22",
         "fase": "Ida",
         "jogo": "Jogo 502",
@@ -308,6 +330,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  Catalao  |  -  |  GO | Genervino da Fonseca"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B23",
         "fase": "Ida",
         "jogo": "Jogo 503",
@@ -322,6 +345,7 @@
         "detalhes": "21/06/2026 |  -  | 17:00 |  Ivinhema  |  -  |  MS | Saraivão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B24",
         "fase": "Ida",
         "jogo": "Jogo 504",
@@ -336,6 +360,7 @@
         "detalhes": "20/06/2026 |  -  | 15:00 |  Vitoria  |  -  |  ES | Salvador Costa"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B25",
         "fase": "Ida",
         "jogo": "Jogo 505",
@@ -350,6 +375,7 @@
         "detalhes": "20/06/2026 |  -  | 17:00 |  Saquarema  |  -  |  RJ | Lourival Gomes"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B26",
         "fase": "Ida",
         "jogo": "Jogo 506",
@@ -364,6 +390,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  Rio de Janeiro  |  -  |  RJ | Luso Brasileiro"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B27",
         "fase": "Ida",
         "jogo": "Jogo 507",
@@ -378,6 +405,7 @@
         "detalhes": "20/06/2026 |  -  | 15:00 |  Mesquita  |  -  |  RJ | Giulite Coutinho"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B28",
         "fase": "Ida",
         "jogo": "Jogo 508",
@@ -392,6 +420,7 @@
         "detalhes": "20/06/2026 |  -  | 19:00 |  Rio Claro  |  -  |  SP | Benitão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B29",
         "fase": "Ida",
         "jogo": "Jogo 509",
@@ -406,6 +435,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  Porto Alegre  |  -  |  RS | Francisco Novelletto"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B30",
         "fase": "Ida",
         "jogo": "Jogo 510",
@@ -420,6 +450,7 @@
         "detalhes": "21/06/2026 |  -  | 16:00 |  Cascavel  |  -  |  PR | Olímpico Regional"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B31",
         "fase": "Ida",
         "jogo": "Jogo 511",
@@ -434,6 +465,7 @@
         "detalhes": "20/06/2026 |  -  | 15:30 |  Ijui  |  -  |  RS | 19 de Outubro"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B32",
         "fase": "Ida",
         "jogo": "Jogo 512",
@@ -448,6 +480,7 @@
         "detalhes": "20/06/2026 |  -  | 15:00 |  Curitiba  |  -  |  PR | Vila Olimpica"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B01",
         "fase": "Volta",
         "jogo": "Jogo 513",
@@ -462,6 +495,7 @@
         "detalhes": "28/06/2026 |  -  | 16:30 |  Manaus  |  -  |  AM | Ismael Benigno"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B02",
         "fase": "Volta",
         "jogo": "Jogo 514",
@@ -476,6 +510,7 @@
         "detalhes": "28/06/2026 |  -  | 17:00 |  Ariquemes  |  -  |  RO | Valerião"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B03",
         "fase": "Volta",
         "jogo": "Jogo 515",
@@ -490,6 +525,7 @@
         "detalhes": "28/06/2026 |  -  | 18:00 |  Rolim de Moura  |  -  |  RO | Cassolão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B04",
         "fase": "Volta",
         "jogo": "Jogo 516",
@@ -504,6 +540,7 @@
         "detalhes": "28/06/2026 |  -  | 17:00 |  Manaus  |  -  |  AM | Carlos Zamith"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B05",
         "fase": "Volta",
         "jogo": "Jogo 517",
@@ -518,6 +555,7 @@
         "detalhes": "27/06/2026 |  -  | 19:30 |  Gama  |  -  |  DF | Valmir Bezerra"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B06",
         "fase": "Volta",
         "jogo": "Jogo 518",
@@ -532,6 +570,7 @@
         "detalhes": "27/06/2026 |  -  | 18:30 |  Goiatuba  |  -  |  GO | Divino Garcia Rosa"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B07",
         "fase": "Volta",
         "jogo": "Jogo 519",
@@ -546,6 +585,7 @@
         "detalhes": "27/06/2026 |  -  | 17:00 |  Brasilia  |  -  |  DF | Jk"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B08",
         "fase": "Volta",
         "jogo": "Jogo 520",
@@ -560,6 +600,7 @@
         "detalhes": "28/06/2026 |  -  | 18:00 |  Lucas do Rio Verde  |  -  |  MT | Passo das Emas"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B09",
         "fase": "Volta",
         "jogo": "Jogo 521",
@@ -574,6 +615,7 @@
         "detalhes": "27/06/2026 |  -  | 15:30 |  Santana  |  -  |  AP | Augusto Antunes"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B10",
         "fase": "Volta",
         "jogo": "Jogo 522",
@@ -588,6 +630,7 @@
         "detalhes": "27/06/2026 |  -  | 15:30 |  Maracanau  |  -  |  CE | Prefeitão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B11",
         "fase": "Volta",
         "jogo": "Jogo 523",
@@ -602,6 +645,7 @@
         "detalhes": "27/06/2026 |  -  | 16:00 |  Iguatu  |  -  |  CE | Morenão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B12",
         "fase": "Volta",
         "jogo": "Jogo 524",
@@ -616,6 +660,7 @@
         "detalhes": "27/06/2026 |  -  | 17:00 |  Maraba  |  -  |  PA | Zinho Oliveira"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B13",
         "fase": "Volta",
         "jogo": "Jogo 525",
@@ -630,6 +675,7 @@
         "detalhes": "28/06/2026 |  -  | 17:00 |  Fortaleza  |  -  |  CE | Presidente Vargas"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B14",
         "fase": "Volta",
         "jogo": "Jogo 526",
@@ -644,6 +690,7 @@
         "detalhes": "27/06/2026 |  -  | 18:00 |  Natal  |  -  |  RN | Arena das Dunas"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B15",
         "fase": "Volta",
         "jogo": "Jogo 527",
@@ -658,6 +705,7 @@
         "detalhes": "28/06/2026 |  -  | 16:00 |  Natal  |  -  |  RN | Arena das Dunas"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B16",
         "fase": "Volta",
         "jogo": "Jogo 528",
@@ -672,6 +720,7 @@
         "detalhes": "27/06/2026 |  -  | 16:00 |  Teresina  |  -  |  PI | Albertão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B17",
         "fase": "Volta",
         "jogo": "Jogo 529",
@@ -686,6 +735,7 @@
         "detalhes": "28/06/2026 |  -  | 17:00 |  Campina Grande  |  -  |  PB | Amigão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B18",
         "fase": "Volta",
         "jogo": "Jogo 530",
@@ -700,6 +750,7 @@
         "detalhes": "28/06/2026 |  -  | 15:30 |  Juazeiro  |  -  |  BA | Adauto Moraes"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B19",
         "fase": "Volta",
         "jogo": "Jogo 531",
@@ -714,6 +765,7 @@
         "detalhes": "27/06/2026 |  -  | 17:00 |  Maceio  |  -  |  AL | Rei Pelé"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B20",
         "fase": "Volta",
         "jogo": "Jogo 532",
@@ -728,6 +780,7 @@
         "detalhes": "27/06/2026 |  -  | 17:00 |  Aracaju  |  -  |  SE | Batistão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B21",
         "fase": "Volta",
         "jogo": "Jogo 533",
@@ -742,6 +795,7 @@
         "detalhes": "27/06/2026 |  -  | 17:00 |  Uberlandia  |  -  |  MG | Parque do Sabiá"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B22",
         "fase": "Volta",
         "jogo": "Jogo 534",
@@ -756,6 +810,7 @@
         "detalhes": "27/06/2026 |  -  | 18:00 |  Tombos  |  -  |  MG | Antônio Guimarães de Almeida"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B23",
         "fase": "Volta",
         "jogo": "Jogo 535",
@@ -770,6 +825,7 @@
         "detalhes": "29/06/2026 |  -  | 19:00 |  Governador Valadares  |  -  |  MG | Mamudão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B24",
         "fase": "Volta",
         "jogo": "Jogo 536",
@@ -784,6 +840,7 @@
         "detalhes": "27/06/2026 |  -  | 15:00 |  Contagem  |  -  |  MG | Arena Gregorão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B25",
         "fase": "Volta",
         "jogo": "Jogo 537",
@@ -798,6 +855,7 @@
         "detalhes": "27/06/2026 |  -  | 16:00 |  Sao Paulo  |  -  |  SP | Canindé"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B26",
         "fase": "Volta",
         "jogo": "Jogo 538",
@@ -812,6 +870,7 @@
         "detalhes": "28/06/2026 |  -  | 16:00 |  Bauru  |  -  |  SP | Alfredão"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B27",
         "fase": "Volta",
         "jogo": "Jogo 539",
@@ -826,6 +885,7 @@
         "detalhes": "27/06/2026 |  -  | 18:00 |  Piracicaba  |  -  |  SP | Barão de Serra Negra"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B28",
         "fase": "Volta",
         "jogo": "Jogo 540",
@@ -840,6 +900,7 @@
         "detalhes": "27/06/2026 |  -  | 16:00 |  Diadema  |  -  |  SP | Jardim Inamar"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B29",
         "fase": "Volta",
         "jogo": "Jogo 541",
@@ -854,6 +915,7 @@
         "detalhes": "27/06/2026 |  -  | 15:00 |  Rio do Sul  |  -  |  SC | Alfredo João Krieck"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B30",
         "fase": "Volta",
         "jogo": "Jogo 542",
@@ -868,6 +930,7 @@
         "detalhes": "28/06/2026 |  -  | 16:00 |  Itajai  |  -  |  SC | Hercílio Luz"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B31",
         "fase": "Volta",
         "jogo": "Jogo 543",
@@ -882,6 +945,7 @@
         "detalhes": "27/06/2026 |  -  | 14:30 |  Blumenau  |  -  |  SC | Sesi"
     },
     {
+        "nome_fase": "2ª Fase",
         "grupo": "GRUPO B32",
         "fase": "Volta",
         "jogo": "Jogo 544",
@@ -896,6 +960,7 @@
         "detalhes": "28/06/2026 |  -  | 16:00 |  Cianorte  |  -  |  PR | Albino Turbay"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C01",
         "fase": "Ida",
         "jogo": "Jogo 545",
@@ -910,6 +975,7 @@
         "detalhes": "04/07/2026 |  -  | 18:30 |  Goiatuba  |  -  |  GO | Divino Garcia Rosa"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C02",
         "fase": "Ida",
         "jogo": "Jogo 546",
@@ -924,6 +990,7 @@
         "detalhes": "04/07/2026 |  -  | 16:00 |  Ji |  -  | Parana  | Biancão"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C03",
         "fase": "Ida",
         "jogo": "Jogo 547",
@@ -938,6 +1005,7 @@
         "detalhes": "04/07/2026 |  -  | 18:00 |  Lucas do Rio Verde  |  -  |  MT | Passo das Emas"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C04",
         "fase": "Ida",
         "jogo": "Jogo 548",
@@ -952,6 +1020,7 @@
         "detalhes": "04/07/2026 |  -  | 16:00 |  Manaus  |  -  |  AM | Ismael Benigno"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C05",
         "fase": "Ida",
         "jogo": "Jogo 549",
@@ -966,6 +1035,7 @@
         "detalhes": "04/07/2026 |  -  | 16:00 |  Santana  |  -  |  AP | Augusto Antunes"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C06",
         "fase": "Ida",
         "jogo": "Jogo 550",
@@ -980,6 +1050,7 @@
         "detalhes": "04/07/2026 |  -  | 16:00 |  Imperatriz  |  -  |  MA | Frei Epifânio"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C07",
         "fase": "Ida",
         "jogo": "Jogo 551",
@@ -994,6 +1065,7 @@
         "detalhes": "04/07/2026 |  -  | 16:00 |  Recife  |  -  |  PE | Ilha do Retiro"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C08",
         "fase": "Ida",
         "jogo": "Jogo 552",
@@ -1008,6 +1080,7 @@
         "detalhes": "04/07/2026 |  -  | 17:00 |  Maraba  |  -  |  PA | Zinho Oliveira"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C09",
         "fase": "Ida",
         "jogo": "Jogo 553",
@@ -1022,6 +1095,7 @@
         "detalhes": "04/07/2026 |  -  | 16:00 |  Catalao  |  -  |  GO | Genervino da Fonseca"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C10",
         "fase": "Ida",
         "jogo": "Jogo 554",
@@ -1036,6 +1110,7 @@
         "detalhes": "04/07/2026 |  -  | 16:30 |  Campina Grande  |  -  |  PB | Amigão"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C11",
         "fase": "Ida",
         "jogo": "Jogo 555",
@@ -1050,6 +1125,7 @@
         "detalhes": "04/07/2026 |  -  | 17:00 |  Belo Horizonte  |  -  |  MG | Independência"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C13",
         "fase": "Ida",
         "jogo": "Jogo 557",
@@ -1064,6 +1140,7 @@
         "detalhes": "04/07/2026 |  -  | 18:00 |  Itajai  |  -  |  SC | Hercílio Luz"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C14",
         "fase": "Ida",
         "jogo": "Jogo 558",
@@ -1078,6 +1155,7 @@
         "detalhes": "04/07/2026 |  -  | 16:00 |  Porto Alegre  |  -  |  RS | Francisco Novelletto"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C15",
         "fase": "Ida",
         "jogo": "Jogo 559",
@@ -1092,6 +1170,7 @@
         "detalhes": "04/07/2026 |  -  | 16:00 |  Cianorte  |  -  |  PR | Albino Turbay"
     },
     {
+        "nome_fase": "3ª Fase",
         "grupo": "GRUPO C16",
         "fase": "Ida",
         "jogo": "Jogo 560",
