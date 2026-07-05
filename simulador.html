@@ -141,26 +141,34 @@
 
         .score-input {
             width: 50px;
-            height: 35px;
+            height: 40px;
             text-align: center;
-            background: var(--bg-main);
-            border: 1px solid var(--card-border);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 2px solid var(--primary);
             color: #fff;
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+            cursor: text;
         }
 
         .score-input:focus {
             outline: none;
             border-color: var(--primary);
+            background: rgba(16, 185, 129, 0.1);
+            transform: scale(1.05);
         }
 
         .real-score {
-            background: rgba(16, 185, 129, 0.1) !important;
-            border-color: rgba(16, 185, 129, 0.3) !important;
+            background: rgba(16, 185, 129, 0.15) !important;
+            border: 1px solid rgba(16, 185, 129, 0.3) !important;
             color: #34d399 !important;
+            cursor: not-allowed;
+            opacity: 0.9;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.3) !important;
         }
 
         .score-label {
@@ -364,12 +372,12 @@
             
             if(!tA || !tB) return;
 
-            // Placar real ou string vazia para a simulação
-            let idaA = par.ida.isReal ? par.ida.pm : '';
-            let idaB = par.ida.isReal ? par.ida.pv : '';
+            // Placar real ou 0 para a simulação
+            let idaA = par.ida.isReal ? par.ida.pm : '0';
+            let idaB = par.ida.isReal ? par.ida.pv : '0';
             // Na volta, o tA jogou como visitante
-            let volA = par.volta.isReal ? par.volta.pv : ''; 
-            let volB = par.volta.isReal ? par.volta.pm : ''; 
+            let volA = par.volta.isReal ? par.volta.pv : '0'; 
+            let volB = par.volta.isReal ? par.volta.pm : '0'; 
             
             let idA_attr = par.ida.isReal ? 'disabled class="score-input p1-ida real-score"' : 'class="score-input p1-ida"';
             let idB_attr = par.ida.isReal ? 'disabled class="score-input p2-ida real-score"' : 'class="score-input p2-ida"';
@@ -377,20 +385,23 @@
             let volA_attr = par.volta.isReal ? 'disabled class="score-input p1-vol real-score"' : 'class="score-input p1-vol"';
             let volB_attr = par.volta.isReal ? 'disabled class="score-input p2-vol real-score"' : 'class="score-input p2-vol"';
 
+            let labelIda = par.ida.isReal ? 'IDA ✅' : 'IDA ✏️';
+            let labelVolta = par.volta.isReal ? 'VOLTA ✅' : 'VOLTA ✏️';
+
             container.innerHTML += `
                 <div class="match-card" data-index="${index}">
                     <div style="display: grid; grid-template-columns: 1fr 50px 50px; gap: 10px; margin-bottom: 5px;">
                         <div></div>
-                        <div class="score-label">IDA</div>
-                        <div class="score-label">VOLTA</div>
+                        <div class="score-label" title="${par.ida.isReal ? 'Resultado Oficial (Já somado na campanha)' : 'Simule este jogo'}">${labelIda}</div>
+                        <div class="score-label" title="${par.volta.isReal ? 'Resultado Oficial (Já somado na campanha)' : 'Simule este jogo'}">${labelVolta}</div>
                     </div>
                     <div class="team-row">
                         <div class="team-info">
                             ${tA.escudo ? `<img src="${tA.escudo}" class="shield">` : ''}
                             <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${tA.nome}">${tA.nome.split(' - ')[0]}</span>
                         </div>
-                        <input type="number" ${idA_attr} min="0" placeholder="?" value="${idaA}">
-                        <input type="number" ${volA_attr} min="0" placeholder="?" value="${volA}">
+                        <input type="number" ${idA_attr} min="0" value="${idaA}">
+                        <input type="number" ${volA_attr} min="0" value="${volA}">
                     </div>
                     <div class="vs">MATA-MATA</div>
                     <div class="team-row">
@@ -398,8 +409,8 @@
                             ${tB.escudo ? `<img src="${tB.escudo}" class="shield">` : ''}
                             <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${tB.nome}">${tB.nome.split(' - ')[0]}</span>
                         </div>
-                        <input type="number" ${idB_attr} min="0" placeholder="?" value="${idaB}">
-                        <input type="number" ${volB_attr} min="0" placeholder="?" value="${volB}">
+                        <input type="number" ${idB_attr} min="0" value="${idaB}">
+                        <input type="number" ${volB_attr} min="0" value="${volB}">
                     </div>
                 </div>
             `;
