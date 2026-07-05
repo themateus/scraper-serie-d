@@ -494,9 +494,10 @@
         if (faseAtualNivel >= 4) {
             // Transição para as QUARTAS DE FINAL (ou frente) -> Ranking Geral
             for(let i=0; i < n/2; i++) {
+                // i é a melhor campanha, n-1-i é a pior. O pior joga a Ida em casa (tA).
                 novosConfrontos.push({
-                    tA: vencedores_rankeados[i].id,
-                    tB: vencedores_rankeados[n - 1 - i].id,
+                    tA: vencedores_rankeados[n - 1 - i].id,
+                    tB: vencedores_rankeados[i].id,
                     ida: { pm: null, pv: null, isReal: false },
                     volta: { pm: null, pv: null, isReal: false }
                 });
@@ -504,9 +505,24 @@
         } else {
             // Transição para Oitavas -> Chaveamento fixo (vencedor Jogo 1 x vencedor Jogo 2)
             for(let i=0; i < n; i+=2) {
+                let v1 = vencedores[i];
+                let v2 = vencedores[i+1];
+                
+                let melhor = v1;
+                let pior = v2;
+                
+                // Define quem tem a melhor campanha para mandar o segundo jogo
+                if (v2.pts > v1.pts || 
+                   (v2.pts === v1.pts && v2.v > v1.v) ||
+                   (v2.pts === v1.pts && v2.v === v1.v && v2.sg > v1.sg) ||
+                   (v2.pts === v1.pts && v2.v === v1.v && v2.sg === v1.sg && v2.gp > v1.gp)) {
+                    melhor = v2;
+                    pior = v1;
+                }
+                
                 novosConfrontos.push({
-                    tA: vencedores[i].id,
-                    tB: vencedores[i+1].id,
+                    tA: pior.id,
+                    tB: melhor.id,
                     ida: { pm: null, pv: null, isReal: false },
                     volta: { pm: null, pv: null, isReal: false }
                 });
