@@ -47,7 +47,17 @@ def extrair_classificacao_fase1(url_fase1):
                 
             # 3. Extração pura via índices das colunas (Padrão CBF)
             # O nome do time está dentro de uma tag <a> no td[0]
-            nome_time = tds[0].find('a').text.strip()
+            a_tag = tds[0].find('a')
+            nome_time = a_tag.text.strip()
+            
+            # ID único do clube e Escudo
+            href = a_tag.get('href', '')
+            club_id = href.rstrip('/').split('/')[-1] if href else nome_time
+            
+            img_tag = a_tag.find('img')
+            escudo_url = img_tag.get('src') if img_tag else ""
+            if escudo_url and escudo_url.startswith('/'):
+                escudo_url = f"https://www.cbf.com.br{escudo_url}"
             
             # Os demais são convertidos para números inteiros (int) para permitir cálculos matemáticos
             pontos = int(tds[1].text.strip())
@@ -62,6 +72,8 @@ def extrair_classificacao_fase1(url_fase1):
             print(f"[{nome_grupo}] {nome_time:.<25} {pontos:02d} pts | SG: {saldo_gols}")
             
             tabela_geral.append({
+                "club_id": club_id,
+                "escudo_url": escudo_url,
                 "grupo_origem": nome_grupo,
                 "time": nome_time,
                 "pontos": pontos,

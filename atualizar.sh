@@ -1,12 +1,15 @@
 #!/bin/bash
 
 echo "🔄 Iniciando extração e processamento..."
-# Ativa o ambiente virtual (ajuste se o nome for diferente)
+# Se você não estiver usando ambiente virtual ativado direto, 
+# pode até remover a linha do 'source venv/bin/activate'
 source venv/bin/activate
 
-# Roda os scrapers e o processador
-python3 scraper_fase1.py
-python3 processador_tabela.py
+# Puxa o mata-mata
+python scraper_resultados.py
+
+# Processa a matemática e gera o tabela_geral.json
+python processador_tabela.py
 
 echo "📤 Enviando dados para o GitHub..."
 git add classificacao_fase1.json tabela_geral.json index.html

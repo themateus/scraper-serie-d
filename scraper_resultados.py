@@ -41,14 +41,22 @@ def extrair_partidas_fase(url_fase):
             times_divs = score_container.find_all('div', recursive=False) 
             
             # --- MANDANTE ---
-            mandante_nome = times_divs[0].find('strong')['title']
+            a_mandante = times_divs[0].find('a')
+            mandante_nome = a_mandante.find('strong')['title'] if a_mandante and a_mandante.find('strong') else times_divs[0].find('strong')['title']
+            mandante_href = a_mandante.get('href', '') if a_mandante else ''
+            mandante_id = mandante_href.rstrip('/').split('/')[-1] if mandante_href else mandante_nome
+            
             mandante_placar = times_divs[0].find('span', class_=lambda x: x and 'gol' in x.lower()).text.strip()
             # Verifica se teve pênaltis
             mandante_penaltis = times_divs[0].find('span', class_=lambda x: x and 'penaltis' in x.lower())
             mandante_penaltis = mandante_penaltis.text.strip().replace('(', '').replace(')', '') if mandante_penaltis else ""
             
             # --- VISITANTE ---
-            visitante_nome = times_divs[1].find('strong')['title']
+            a_visitante = times_divs[1].find('a')
+            visitante_nome = a_visitante.find('strong')['title'] if a_visitante and a_visitante.find('strong') else times_divs[1].find('strong')['title']
+            visitante_href = a_visitante.get('href', '') if a_visitante else ''
+            visitante_id = visitante_href.rstrip('/').split('/')[-1] if visitante_href else visitante_nome
+            
             visitante_placar = times_divs[1].find('span', class_=lambda x: x and 'gol' in x.lower()).text.strip()
             # Verifica se teve pênaltis
             visitante_penaltis = times_divs[1].find('span', class_=lambda x: x and 'penaltis' in x.lower())
@@ -68,13 +76,19 @@ def extrair_partidas_fase(url_fase):
                 
             print(f"[{grupo} - {ida_volta} | {num_jogo}] {placar_str}")
             
+            # Ignora jogos que ainda não aconteceram (placar vazio)
+            if not mandante_placar.strip() or not visitante_placar.strip():
+                continue
+                
             lista_partidas.append({
                 "grupo": grupo,
                 "fase": ida_volta,
                 "jogo": num_jogo,
+                "mandante_id": mandante_id,
                 "mandante": mandante_nome,
                 "placar_mandante": int(mandante_placar),
                 "penaltis_mandante": int(mandante_penaltis) if mandante_penaltis else None,
+                "visitante_id": visitante_id,
                 "visitante": visitante_nome,
                 "placar_visitante": int(visitante_placar),
                 "penaltis_visitante": int(visitante_penaltis) if visitante_penaltis else None,
@@ -82,16 +96,51 @@ def extrair_partidas_fase(url_fase):
             })
             
         except Exception as e:
-            # Ignora erros em blocos de propagandas ou mal formatados
+            print(f"⚠️ Erro ao processar bloco: {e}")
             pass
             
-    # Salvar o JSON
-    with open("resultados_serie_d.json", "w", encoding="utf-8") as arquivo:
-        json.dump(lista_partidas, arquivo, ensure_ascii=False, indent=4)
-        
-    print("\n✅ Arquivo 'resultados_serie_d.json' gerado com sucesso!")
+    return lista_partidas
+
+def obter_fases_mata_mata():
+    url_base = "https://www.cbf.com.br/futebol-brasileiro/tabelas/campeonato-brasileiro/serie-d/2026"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    try:
+        resp = requests.get(url_base, headers=headers, verify=False)
+        soup = BeautifulSoup(resp.text, 'html.parser')
+        fases = []
+        for a in soup.find_all('a', href=True):
+            txt = a.text.strip()
+            if any(x in txt for x in ['Fase', 'Oitavas', 'Quartas', 'Semifinal', 'Final', 'final']):
+                if '/2026/' in a['href'] and a['href'].split('/')[-1].isdigit():
+                    if '1ª Fase' not in txt and 'Grupo' not in txt:
+                        full_url = a['href']
+                        if not full_url.startswith('http'):
+                            full_url = 'https://www.cbf.com.br' + full_url
+                        fases.append(full_url)
+        # Manter a ordem preservando unicos
+        fases_unicas = []
+        for f in fases:
+            if f not in fases_unicas:
+                fases_unicas.append(f)
+        return fases_unicas
+    except Exception as e:
+        print(f"Erro ao buscar fases: {e}")
+        return []
 
 if __name__ == "__main__":
-    # Coloque aqui a URL da fase que você quer puxar os resultados
-    url_alvo = "https://www.cbf.com.br/futebol-brasileiro/tabelas/campeonato-brasileiro/serie-d/2026/2066"
-    extrair_partidas_fase(url_alvo)
+    fases_mata_mata = obter_fases_mata_mata()
+    print(f"🔍 Fases de mata-mata encontradas automaticamente: {len(fases_mata_mata)}")
+    
+    todas_as_partidas = []
+    
+    # Roda o scraper para cada link e junta na mesma panela
+    for link in fases_mata_mata:
+        partidas_da_fase = extrair_partidas_fase(link)
+        if partidas_da_fase:
+            todas_as_partidas.extend(partidas_da_fase)
+            
+    # Salva o arquivo mestre de resultados
+    with open("resultados_serie_d.json", "w", encoding="utf-8") as arquivo:
+        json.dump(todas_as_partidas, arquivo, ensure_ascii=False, indent=4)
+        
+    print(f"\n✅ Foram salvas {len(todas_as_partidas)} partidas do mata-mata!")

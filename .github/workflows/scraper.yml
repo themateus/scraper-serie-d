@@ -1,0 +1,48 @@
+name: Atualizar Tabela Série D
+
+on:
+  schedule:
+    # Executa todos os dias às 21:00 e 23:30 (horário de Brasília é UTC-3, então 00:00 e 02:30 UTC)
+    - cron: '0 0 * * *'
+    - cron: '30 2 * * *'
+  workflow_dispatch: # Permite rodar manualmente pelo painel do GitHub
+
+jobs:
+  scraper:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v5
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Executar Scrapers e Processador
+        run: |
+          python scraper_fase1.py
+          python scraper_resultados.py
+          python processador_tabela.py
+
+      - name: Commit e Push das Alterações
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add classificacao_fase1.json resultados_serie_d.json tabela_geral.json
+          
+          # Só faz o commit se houver alguma mudança
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "🤖 Atualização automática da tabela: $(date +'%d/%m/%Y %H:%M')"
+            git push
+          else
+            echo "Nenhuma mudança para commitar."
+          fi
