@@ -404,34 +404,34 @@
             alert("🎉 ACESSO DEFINIDO! Estes times estariam na Série C!");
         }
 
-        // A PARTIR DAS OITAVAS (indo para fase 4 em diante), O CHAVEAMENTO É PELO RANKING GERAL!
-        // Como o usuário está simulando a 3ª Fase (faseAtualNivel = 3), os vencedores vão para a Fase 4.
-        // A regra diz: "a classificacao geral só é levada a partir das oitavas (4ª fase)".
-        // Então ao terminar a Fase 3 (e para todas as fases seguintes), rankeamos os classificados.
+        // A regra oficial diz: a classificação geral só é levada em conta nas QUARTAS DE FINAL (Fase 5) em diante.
+        // Fases 3 e 4 seguem o chaveamento fixo (vencedor 1 x vencedor 2).
         
-        vencedores.sort((a, b) => {
+        let vencedores_rankeados = [...vencedores];
+        vencedores_rankeados.sort((a, b) => {
             if (b.pts !== a.pts) return b.pts - a.pts;
             if (b.v !== a.v) return b.v - a.v;
             if (b.sg !== a.sg) return b.sg - a.sg;
             return b.gp - a.gp;
         });
         
-        mostrarRanking(vencedores);
+        mostrarRanking(vencedores_rankeados);
         
         let novosConfrontos = [];
         let n = vencedores.length;
         
-        if (faseAtualNivel >= 3) {
-            // Ranking Geral: 1º x 16º, 2º x 15º, etc
+        if (faseAtualNivel >= 4) {
+            // Transição para as QUARTAS DE FINAL (ou frente)
+            // Ranking Geral: 1º x 8º, 2º x 7º, etc
             for(let i=0; i < n/2; i++) {
                 novosConfrontos.push({
-                    m: vencedores[i].id,
-                    v: vencedores[n - 1 - i].id
+                    m: vencedores_rankeados[i].id,
+                    v: vencedores_rankeados[n - 1 - i].id
                 });
             }
         } else {
-            // Se fosse transição da 2ª para 3ª, a regra é bloco regional (chaveamento fixo).
-            // O simulador simplifica se rodado em fases anteriores assumindo adjacência.
+            // Transição para Fase 3 ou Fase 4 (Oitavas)
+            // Chaveamento fixo: Vencedor Jogo 1 x Vencedor Jogo 2
             for(let i=0; i < n; i+=2) {
                 novosConfrontos.push({
                     m: vencedores[i].id,
@@ -464,7 +464,9 @@
                 </tr>
             `;
         });
-        document.getElementById('match-container').innerHTML = '<h3 style="color:var(--primary); text-align:center; width:100%; padding:30px;">Cruzando as chaves pelo Ranking Geral...</h3>';
+        
+        let txt = faseAtualNivel >= 4 ? 'Cruzando as chaves pelo Ranking Geral (Campanha)...' : 'Avançando no Chaveamento Fixo...';
+        document.getElementById('match-container').innerHTML = \`<h3 style="color:var(--primary); text-align:center; width:100%; padding:30px;">\${txt}</h3>\`;
         document.getElementById('btn-avancar').style.display = 'none';
     }
 
