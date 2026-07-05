@@ -114,6 +114,31 @@
             pointer-events: none;
         }
 
+        .actions-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-simular {
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-simular:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px -2px rgba(16, 185, 129, 0.3);
+        }
+
         .table-responsive {
             overflow-x: auto;
             border-radius: 12px;
@@ -234,17 +259,20 @@
 <div class="container">
     <div class="header-top">
         <h1>Classificação - Série D</h1>
-        <div class="filter-container">
-            <select id="fase-filter">
-                <option value="Todas">Todas as Fases</option>
-                <option value="1ª Fase">Somente Eliminados 1ª Fase</option>
-                <option value="2ª Fase">Chegaram na 2ª Fase</option>
-                <option value="3ª Fase">Chegaram na 3ª Fase</option>
-                <option value="Oitavas">Oitavas de Final</option>
-                <option value="Quartas">Quartas de Final</option>
-                <option value="Semifinal">Semifinal (Acesso)</option>
-                <option value="Final">Finalistas</option>
-            </select>
+        <div class="actions-container">
+            <a href="simulador.html" class="btn-simular">🎲 Simulador Mata-Mata</a>
+            <div class="filter-container">
+                <select id="fase-filter">
+                    <option value="Todas">Todas as Fases</option>
+                    <option value="1ª Fase">Somente Eliminados 1ª Fase</option>
+                    <option value="2ª Fase">Chegaram na 2ª Fase</option>
+                    <option value="3ª Fase">Chegaram na 3ª Fase</option>
+                    <option value="Oitavas">Oitavas de Final</option>
+                    <option value="Quartas">Quartas de Final</option>
+                    <option value="Semifinal">Semifinal (Acesso)</option>
+                    <option value="Final">Finalistas</option>
+                </select>
+            </div>
         </div>
     </div>
     

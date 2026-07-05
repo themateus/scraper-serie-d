@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Mata-Mata - Série D 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --bg-main: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.65);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-main);
+            background-image: radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.08), transparent 25%),
+                              radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.08), transparent 25%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-voltar {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-acao {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            font-family: 'Outfit', sans-serif;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn-acao:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .fase-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .match-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .match-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .team-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .team-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            font-weight: 600;
+        }
+
+        .shield {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 50%;
+            padding: 3px;
+        }
+
+        .score-input {
+            width: 45px;
+            height: 35px;
+            text-align: center;
+            background: var(--bg-main);
+            border: 1px solid var(--card-border);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        .score-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .vs {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 5px 0;
+        }
+
+        .rules-info {
+            margin-top: 30px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            color: #38bdf8;
+            font-size: 0.9rem;
+        }
+
+        #ranking-modal {
+            display: none;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        th, td { padding: 8px; text-align: center; border-bottom: 1px solid var(--card-border); }
+        th { color: var(--text-muted); font-weight: 600; }
+        .text-left { text-align: left; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🎲 Simulador Série D</h1>
+        <a href="index.html" class="btn-voltar">← Voltar à Tabela</a>
+    </div>
+
+    <div class="rules-info">
+        <strong>Como funciona a Série D?</strong><br>
+        A partir da 3ª Fase (Oitavas), os confrontos são definidos pela <strong>Campanha Geral</strong> acumulada (Pontos, Vitórias, Saldo). O 1º melhor enfrenta o pior (último), o 2º enfrenta o penúltimo, etc. O simulador fará esse recálculo automaticamente!
+    </div>
+
+    <h2 class="fase-title" id="fase-label">Carregando dados...</h2>
+
+    <div class="match-list" id="match-container">
+        <!-- Partidas serão injetadas aqui -->
+    </div>
+
+    <button class="btn-acao" id="btn-avancar" style="display: none;" onclick="avancarFase()">Avançar para a Próxima Fase 🚀</button>
+
+    <div id="ranking-modal">
+        <h3>Classificação Geral Acumulada (Semente para Sorteio)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th class="text-left">Clube</th>
+                    <th>PTS</th>
+                    <th>V</th>
+                    <th>SG</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-body"></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    let times = {}; // Dicionário de estatísticas atuais
+    let confrontosAtuais = []; // Array de pares [{m: ID, v: ID}]
+    let faseAtualNivel = 2; // Começa na 2ª Fase
+    
+    const nomesFases = {
+        2: "2ª Fase (32-avos)",
+        3: "3ª Fase (16-avos)",
+        4: "Oitavas de Final",
+        5: "Quartas de Final (Jogo do Acesso!)",
+        6: "Semifinal",
+        7: "Grande Final"
+    };
+
+    // 1. Carregar os dados reais
+    async function inicializar() {
+        try {
+            const resTabela = await fetch('tabela_geral.json?v=' + new Date().getTime());
+            const tabelaData = await resTabela.json();
+            
+            // Salvar times e suas campanhas na Fase 1
+            tabelaData.forEach(t => {
+                times[t.club_id] = {
+                    id: t.club_id,
+                    nome: t.time,
+                    escudo: t.escudo_url,
+                    pts: t.pontos,
+                    v: t.vitorias,
+                    e: t.empates,
+                    d: t.derrotas,
+                    gp: t.gols_pro,
+                    gc: t.gols_contra,
+                    sg: t.saldo_gols
+                };
+            });
+
+            // Usar os confrontos reais da 2ª Fase se existirem, senão precisaríamos gerá-los
+            const resJogos = await fetch('resultados_serie_d.json?v=' + new Date().getTime());
+            const jogosData = await resJogos.json();
+            
+            const jogosFase2 = jogosData.filter(j => j.fase_nivel === 2);
+            
+            // Agrupar ida e volta para descobrir os pareamentos
+            let pares = new Set();
+            let matchesPhase2 = [];
+            
+            jogosFase2.forEach(j => {
+                let mand = j.mandante_id || j.mandante;
+                let vis = j.visitante_id || j.visitante;
+                let pairId = [mand, vis].sort().join('-');
+                
+                if (!pares.has(pairId)) {
+                    pares.add(pairId);
+                    matchesPhase2.push({ m: mand, v: vis });
+                }
+            });
+
+            if (matchesPhase2.length > 0) {
+                confrontosAtuais = matchesPhase2;
+                faseAtualNivel = 2;
+                renderizarFase();
+            } else {
+                document.getElementById('fase-label').innerText = "Dados da Fase 2 ainda não disponíveis no portal da CBF.";
+            }
+
+        } catch (e) {
+            console.error(e);
+            document.getElementById('fase-label').innerText = "Erro ao carregar os dados JSON.";
+        }
+    }
+
+    function renderizarFase() {
+        document.getElementById('fase-label').innerText = nomesFases[faseAtualNivel] || "Fase Desconhecida";
+        const container = document.getElementById('match-container');
+        container.innerHTML = '';
+        
+        confrontosAtuais.forEach((par, index) => {
+            let t1 = times[par.m];
+            let t2 = times[par.v];
+            
+            if(!t1 || !t2) return;
+
+            container.innerHTML += `
+                <div class="match-card" data-index="${index}">
+                    <div class="team-row">
+                        <div class="team-info">
+                            ${t1.escudo ? `<img src="${t1.escudo}" class="shield">` : ''}
+                            <span>${t1.nome.split(' - ')[0]}</span>
+                        </div>
+                        <input type="number" class="score-input p1-score" min="0" placeholder="0">
+                    </div>
+                    <div class="vs">AGREGADO</div>
+                    <div class="team-row">
+                        <div class="team-info">
+                            ${t2.escudo ? `<img src="${t2.escudo}" class="shield">` : ''}
+                            <span>${t2.nome.split(' - ')[0]}</span>
+                        </div>
+                        <input type="number" class="score-input p2-score" min="0" placeholder="0">
+                    </div>
+                </div>
+            `;
+        });
+        
+        document.getElementById('btn-avancar').style.display = 'block';
+        document.getElementById('ranking-modal').style.display = 'none';
+    }
+
+    function avancarFase() {
+        const cards = document.querySelectorAll('.match-card');
+        let vencedores = [];
+        
+        let erro = false;
+        cards.forEach((card, i) => {
+            let p1Score = parseInt(card.querySelector('.p1-score').value);
+            let p2Score = parseInt(card.querySelector('.p2-score').value);
+            
+            if (isNaN(p1Score) || isNaN(p2Score)) {
+                // Autopreencher com sorteio
+                p1Score = Math.floor(Math.random() * 4);
+                p2Score = Math.floor(Math.random() * 4);
+                while(p1Score === p2Score) { p2Score = Math.floor(Math.random() * 4); } // Força desempate
+                card.querySelector('.p1-score').value = p1Score;
+                card.querySelector('.p2-score').value = p2Score;
+            } else if (p1Score === p2Score) {
+                alert("O placar agregado não pode terminar em empate no mata-mata! Por favor, resolva os pênaltis simulando 1 gol a mais para o vencedor.");
+                erro = true;
+            }
+            
+            if(erro) return;
+
+            let par = confrontosAtuais[i];
+            let t1 = times[par.m];
+            let t2 = times[par.v];
+            
+            // Atualiza estatísticas (assumindo que o score agregado são os gols pro/contra)
+            t1.gp += p1Score; t1.gc += p2Score; t1.sg += (p1Score - p2Score);
+            t2.gp += p2Score; t2.gc += p1Score; t2.sg += (p2Score - p1Score);
+            
+            if(p1Score > p2Score) {
+                t1.v += 1; t1.pts += 3;
+                t2.d += 1;
+                vencedores.push(t1);
+            } else {
+                t2.v += 1; t2.pts += 3;
+                t1.d += 1;
+                vencedores.push(t2);
+            }
+        });
+        
+        if(erro) return;
+
+        if (vencedores.length === 1) {
+            alert(`🏆 PARABÉNS! ${vencedores[0].nome} É O GRANDE CAMPEÃO!`);
+            document.getElementById('btn-avancar').style.display = 'none';
+            return;
+        }
+
+        // Se chegou nas Quartas (8 times), avisar acesso
+        if(faseAtualNivel === 4) { // Vai calcular a fase 5
+            alert("Os vencedores desta próxima rodada garantirão o acesso à Série C!");
+        } else if (faseAtualNivel === 5) {
+            alert("🎉 ACESSO DEFINIDO! Estes times já estão na Série C!");
+        }
+
+        // Recalcular chaveamento baseado na campanha geral
+        vencedores.sort((a, b) => {
+            if (b.pts !== a.pts) return b.pts - a.pts;
+            if (b.v !== a.v) return b.v - a.v;
+            if (b.sg !== a.sg) return b.sg - a.sg;
+            return b.gp - a.gp; // Gols Pró
+        });
+        
+        mostrarRanking(vencedores);
+        
+        let novosConfrontos = [];
+        let n = vencedores.length;
+        // O 1º pega o último (n), 2º pega n-1, etc...
+        for(let i=0; i < n/2; i++) {
+            novosConfrontos.push({
+                m: vencedores[i].id,
+                v: vencedores[n - 1 - i].id
+            });
+        }
+        
+        confrontosAtuais = novosConfrontos;
+        faseAtualNivel++;
+        
+        setTimeout(() => {
+            renderizarFase();
+        }, 3000); // Dá um tempo para ver o ranking
+    }
+    
+    function mostrarRanking(vencedores) {
+        document.getElementById('ranking-modal').style.display = 'block';
+        const tbody = document.getElementById('ranking-body');
+        tbody.innerHTML = '';
+        vencedores.forEach((t, i) => {
+            tbody.innerHTML += `
+                <tr>
+                    <td>${i+1}º</td>
+                    <td class="text-left">${t.nome}</td>
+                    <td><strong>${t.pts}</strong></td>
+                    <td>${t.v}</td>
+                    <td>${t.sg}</td>
+                </tr>
+            `;
+        });
+        document.getElementById('match-container').innerHTML = '<h3 style="color:var(--primary); text-align:center; width:100%; padding:30px;">Sorteando próximos confrontos...</h3>';
+        document.getElementById('btn-avancar').style.display = 'none';
+    }
+
+    window.onload = inicializar;
+
+</script>
+</body>
+</html>
