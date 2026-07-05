@@ -186,7 +186,8 @@
 </div>
 
 <script>
-    fetch('tabela_geral.json')
+    // Adiciona um timestamp na URL para evitar que o navegador faça cache do JSON antigo
+    fetch('tabela_geral.json?v=' + new Date().getTime())
         .then(response => {
             if (!response.ok) throw new Error('Arquivo não encontrado');
             return response.json();
