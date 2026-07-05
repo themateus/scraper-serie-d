@@ -114,6 +114,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            transition: border-color 0.3s;
         }
 
         .team-row {
@@ -230,6 +231,24 @@
         th, td { padding: 8px; text-align: center; border-bottom: 1px solid var(--card-border); }
         th { color: var(--text-muted); font-weight: 600; }
         .text-left { text-align: left; }
+
+        /* Estilos Desempate por Pênaltis */
+        .tiebreaker-radio {
+            accent-color: var(--primary);
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            display: none;
+            margin-right: 8px;
+        }
+        .tiebreaker-alert {
+            color: #f59e0b;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -273,8 +292,8 @@
 </div>
 
 <script>
-    let times = {}; // Dicionário de estatísticas atuais
-    let confrontosAtuais = []; // Array de pares complexos {tA, tB, ida, volta}
+    let times = {}; 
+    let confrontosAtuais = []; 
     let faseAtualNivel = 2; 
     
     const nomesFases = {
@@ -295,7 +314,6 @@
             const resTabela = await fetch('tabela_geral.json?v=' + new Date().getTime());
             const tabelaData = await resTabela.json();
             
-            // Salvar times e suas campanhas
             tabelaData.forEach(t => {
                 times[t.club_id] = {
                     id: t.club_id,
@@ -314,7 +332,6 @@
             const resJogos = await fetch('resultados_serie_d.json?v=' + new Date().getTime());
             const jogosData = await resJogos.json();
             
-            // Descobrir a fase atual
             let maxNivel = 2;
             let nomeMaxFase = "2ª Fase";
             jogosData.forEach(j => {
@@ -328,7 +345,6 @@
             faseAtualNivel = maxNivel;
             const jogosFaseAtual = jogosData.filter(j => j.nome_fase === nomeMaxFase);
             
-            // Agrupar confrontos com Ida e Volta
             let paresMap = new Map();
             let matchesCurrent = [];
             
@@ -349,14 +365,13 @@
                 
                 let p = paresMap.get(pairId);
                 if (j.fase === "Ida") {
-                    p.tA = mand; p.tB = vis; // Garante que tA é o mandante da Ida
+                    p.tA = mand; p.tB = vis; 
                     if(j.placar_mandante !== null) {
                         p.ida.pm = j.placar_mandante;
                         p.ida.pv = j.placar_visitante;
                         p.ida.isReal = true;
                     }
                 } else if (j.fase === "Volta") {
-                    // Na Volta, o mandante é o Visitante da Ida (tB) e vice-versa
                     if(j.placar_mandante !== null) {
                         p.volta.pm = j.placar_mandante;
                         p.volta.pv = j.placar_visitante;
@@ -389,10 +404,8 @@
             
             if(!tA || !tB) return;
 
-            // Placar real ou 0 para a simulação
             let idaA = par.ida.isReal ? par.ida.pm : '0';
             let idaB = par.ida.isReal ? par.ida.pv : '0';
-            // Na volta, o tA jogou como visitante
             let volA = par.volta.isReal ? par.volta.pv : '0'; 
             let volB = par.volta.isReal ? par.volta.pm : '0'; 
             
@@ -406,14 +419,15 @@
             let classVolta = par.volta.isReal ? 'badge-real' : 'badge-sim';
 
             container.innerHTML += `
-                <div class="match-card" data-index="${index}">
+                <div class="match-card" data-index="${index}" id="card_${index}">
                     <div style="display: grid; grid-template-columns: 1fr 50px 50px; gap: 10px; margin-bottom: 5px;">
                         <div></div>
-                        <div class="score-label ${classIda}" title="${par.ida.isReal ? 'Resultado Oficial (Já somado na campanha)' : 'Simule este jogo'}">IDA</div>
-                        <div class="score-label ${classVolta}" title="${par.volta.isReal ? 'Resultado Oficial (Já somado na campanha)' : 'Simule este jogo'}">VOLTA</div>
+                        <div class="score-label ${classIda}" title="${par.ida.isReal ? 'Resultado Oficial' : 'Simule este jogo'}">IDA</div>
+                        <div class="score-label ${classVolta}" title="${par.volta.isReal ? 'Resultado Oficial' : 'Simule este jogo'}">VOLTA</div>
                     </div>
                     <div class="team-row">
                         <div class="team-info">
+                            <input type="radio" name="tiebreaker_${index}" value="tA" class="tiebreaker-radio" title="Marque se este time venceu nos pênaltis">
                             ${tA.escudo ? `<img src="${tA.escudo}" class="shield">` : ''}
                             <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${tA.nome}">${tA.nome.split(' - ')[0]}</span>
                         </div>
@@ -423,12 +437,14 @@
                     <div class="vs">MATA-MATA</div>
                     <div class="team-row">
                         <div class="team-info">
+                            <input type="radio" name="tiebreaker_${index}" value="tB" class="tiebreaker-radio" title="Marque se este time venceu nos pênaltis">
                             ${tB.escudo ? `<img src="${tB.escudo}" class="shield">` : ''}
                             <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${tB.nome}">${tB.nome.split(' - ')[0]}</span>
                         </div>
                         <input type="number" ${idB_attr} min="0" value="${idaB}">
                         <input type="number" ${volB_attr} min="0" value="${volB}">
                     </div>
+                    <div class="tiebreaker-alert">Empate no agregado! Selecione ao lado do escudo quem venceu nos pênaltis para avançar.</div>
                 </div>
             `;
         });
@@ -439,9 +455,10 @@
 
     function avancarFase() {
         const cards = document.querySelectorAll('.match-card');
-        let vencedores = [];
+        let resultadosLidos = [];
         let erro = false;
         
+        // Fase 1: Leitura e validação de todos os dados da tela (sem alterar estado oficial)
         cards.forEach((card, i) => {
             let par = confrontosAtuais[i];
             let tA = times[par.tA];
@@ -458,17 +475,52 @@
             }
             if (isNaN(volA) || isNaN(volB)) {
                 volA = Math.floor(Math.random() * 3); volB = Math.floor(Math.random() * 3);
-                if ((idaA+volA) === (idaB+volB)) volA++;
                 card.querySelector('.p1-vol').value = volA; card.querySelector('.p2-vol').value = volB;
-            } else if ((idaA+volA) === (idaB+volB)) {
-                alert("O placar agregado empatou. Adicione 1 gol fictício ao vencedor para evitar empates no mata-mata da simulação.");
-                erro = true;
             }
             
-            if(erro) return;
+            let aggA = idaA + volA;
+            let aggB = idaB + volB;
+            
+            let radioA = card.querySelector(`input[name="tiebreaker_${i}"][value="tA"]`);
+            let radioB = card.querySelector(`input[name="tiebreaker_${i}"][value="tB"]`);
+            let alertMsg = card.querySelector('.tiebreaker-alert');
 
-            // Só somamos as pontuações na campanha geral se a partida NÃO for real.
-            // Partidas reais já foram computadas no backend no arquivo tabela_geral.json
+            if (aggA === aggB) {
+                if (radioA.checked) {
+                    aggA += 0.1; // Vantagem sutil apenas para passar de fase
+                    radioA.style.display = 'inline-block'; radioB.style.display = 'inline-block';
+                    alertMsg.style.display = 'none'; card.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                } else if (radioB.checked) {
+                    aggB += 0.1;
+                    radioA.style.display = 'inline-block'; radioB.style.display = 'inline-block';
+                    alertMsg.style.display = 'none'; card.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                } else {
+                    // Empate sem vencedor selecionado -> Mostra erro
+                    radioA.style.display = 'inline-block';
+                    radioB.style.display = 'inline-block';
+                    alertMsg.style.display = 'block';
+                    card.style.borderColor = '#f59e0b';
+                    erro = true;
+                }
+            } else {
+                radioA.style.display = 'none'; radioA.checked = false;
+                radioB.style.display = 'none'; radioB.checked = false;
+                alertMsg.style.display = 'none';
+                card.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+            }
+            
+            resultadosLidos.push({ par, tA, tB, idaA, idaB, volA, volB, aggA, aggB });
+        });
+        
+        // Se houver algum empate pendente, paramos antes de alterar a Campanha Geral.
+        if(erro) return;
+
+        let vencedores = [];
+
+        // Fase 2: Aplicar os resultados validados à Campanha Geral e salvar os vencedores
+        resultadosLidos.forEach(res => {
+            let { par, tA, tB, idaA, idaB, volA, volB, aggA, aggB } = res;
+
             if(!par.ida.isReal) {
                 tA.gp += idaA; tA.gc += idaB; tA.sg += (idaA - idaB);
                 tB.gp += idaB; tB.gc += idaA; tB.sg += (idaB - idaA);
@@ -484,14 +536,12 @@
                 else { tA.pts+=1; tB.pts+=1; }
             }
             
-            if ((idaA+volA) > (idaB+volB)) {
+            if (aggA > aggB) {
                 vencedores.push(tA);
             } else {
                 vencedores.push(tB);
             }
         });
-        
-        if(erro) return;
 
         if (vencedores.length === 1) {
             alert(`PARABÉNS! ${vencedores[0].nome} É O GRANDE CAMPEÃO!`);
@@ -505,7 +555,6 @@
             alert("ACESSO DEFINIDO! Estes 4 times estariam na Série C!");
         }
 
-        // A regra oficial diz: a classificação geral só é levada em conta nas QUARTAS DE FINAL (Fase 5) em diante.
         let vencedores_rankeados = [...vencedores];
         vencedores_rankeados.sort((a, b) => {
             if (b.pts !== a.pts) return b.pts - a.pts;
@@ -520,9 +569,7 @@
         let n = vencedores.length;
         
         if (faseAtualNivel >= 4) {
-            // Transição para as QUARTAS DE FINAL (ou frente) -> Ranking Geral
             for(let i=0; i < n/2; i++) {
-                // i é a melhor campanha, n-1-i é a pior. O pior joga a Ida em casa (tA).
                 novosConfrontos.push({
                     tA: vencedores_rankeados[n - 1 - i].id,
                     tB: vencedores_rankeados[i].id,
@@ -531,15 +578,12 @@
                 });
             }
         } else {
-            // Transição para Oitavas -> Chaveamento fixo (vencedor Jogo 1 x vencedor Jogo 2)
             for(let i=0; i < n; i+=2) {
                 let v1 = vencedores[i];
                 let v2 = vencedores[i+1];
-                
                 let melhor = v1;
                 let pior = v2;
                 
-                // Define quem tem a melhor campanha para mandar o segundo jogo
                 if (v2.pts > v1.pts || 
                    (v2.pts === v1.pts && v2.v > v1.v) ||
                    (v2.pts === v1.pts && v2.v === v1.v && v2.sg > v1.sg) ||
