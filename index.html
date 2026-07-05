@@ -251,7 +251,24 @@
         
         let displayData = globalData;
         if (filter !== 'Todas') {
-            displayData = globalData.filter(time => time.status === filter);
+            const filterLevelMap = {
+                '1ª Fase': 1,
+                '2ª Fase': 2,
+                '3ª Fase': 3,
+                'Oitavas': 4,
+                'Quartas': 5,
+                'Semifinal': 6,
+                'Final': 7
+            };
+            const requiredLevel = filterLevelMap[filter];
+            
+            if (filter === '1ª Fase') {
+                // Mostra só quem ficou na 1ª fase
+                displayData = globalData.filter(time => time.fase_nivel === 1);
+            } else {
+                // Para as outras fases, mostra quem chegou NELA (ou seja, fase_nivel >= requiredLevel)
+                displayData = globalData.filter(time => time.fase_nivel >= requiredLevel);
+            }
         }
 
         if (displayData.length === 0) {
