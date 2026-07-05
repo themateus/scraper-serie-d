@@ -39,10 +39,21 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add classificacao_fase1.json resultados_serie_d.json tabela_geral.json
           
-          # Só faz o commit se houver alguma mudança
           if ! git diff-index --quiet HEAD; then
             git commit -m "🤖 Atualização automática da tabela: $(date +'%d/%m/%Y %H:%M')"
             git push
           else
             echo "Nenhuma mudança para commitar."
           fi
+
+      - name: Preparar arquivos do site
+        run: |
+          mkdir -p public
+          cp index.html simulador.html *.json .nojekyll public/ || true
+          
+      - name: Publicar no GitHub Pages (Branch gh-pages)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true

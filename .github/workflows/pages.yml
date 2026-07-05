@@ -15,9 +15,14 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
         
+      - name: Preparar arquivos do site
+        run: |
+          mkdir -p public
+          cp index.html simulador.html *.json .nojekyll public/ || true
+          
       - name: Publicar no GitHub Pages (Branch gh-pages)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./public
           force_orphan: true
