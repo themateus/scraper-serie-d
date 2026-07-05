@@ -234,7 +234,7 @@
 <script>
     let times = {}; // Dicionário de estatísticas atuais
     let confrontosAtuais = []; // Array de pares [{m: ID, v: ID}]
-    let faseAtualNivel = 2; // Começa na 2ª Fase
+    let faseAtualNivel = 2; 
     
     const nomesFases = {
         2: "2ª Fase (32-avos)",
@@ -245,13 +245,17 @@
         7: "Grande Final"
     };
 
+    const niveisNomes = {
+        "2ª Fase": 2, "3ª Fase": 3, "Oitavas de Final": 4, "Quartas de Final": 5, "Semifinal": 6, "Final": 7
+    };
+
     // 1. Carregar os dados reais
     async function inicializar() {
         try {
             const resTabela = await fetch('tabela_geral.json?v=' + new Date().getTime());
             const tabelaData = await resTabela.json();
             
-            // Salvar times e suas campanhas na Fase 1
+            // Salvar times e suas campanhas
             tabelaData.forEach(t => {
                 times[t.club_id] = {
                     id: t.club_id,
@@ -267,33 +271,43 @@
                 };
             });
 
-            // Usar os confrontos reais da 2ª Fase se existirem, senão precisaríamos gerá-los
             const resJogos = await fetch('resultados_serie_d.json?v=' + new Date().getTime());
             const jogosData = await resJogos.json();
             
-            const jogosFase2 = jogosData.filter(j => j.fase_nivel === 2);
+            // Descobrir a fase atual
+            let maxNivel = 2;
+            let nomeMaxFase = "2ª Fase";
+            jogosData.forEach(j => {
+                let nivel = niveisNomes[j.nome_fase] || 2;
+                if(nivel > maxNivel) {
+                    maxNivel = nivel;
+                    nomeMaxFase = j.nome_fase;
+                }
+            });
             
-            // Agrupar ida e volta para descobrir os pareamentos
+            faseAtualNivel = maxNivel;
+            const jogosFaseAtual = jogosData.filter(j => j.nome_fase === nomeMaxFase);
+            
+            // Agrupar confrontos únicos
             let pares = new Set();
-            let matchesPhase2 = [];
+            let matchesCurrent = [];
             
-            jogosFase2.forEach(j => {
+            jogosFaseAtual.forEach(j => {
                 let mand = j.mandante_id || j.mandante;
                 let vis = j.visitante_id || j.visitante;
                 let pairId = [mand, vis].sort().join('-');
                 
                 if (!pares.has(pairId)) {
                     pares.add(pairId);
-                    matchesPhase2.push({ m: mand, v: vis });
+                    matchesCurrent.push({ m: mand, v: vis });
                 }
             });
 
-            if (matchesPhase2.length > 0) {
-                confrontosAtuais = matchesPhase2;
-                faseAtualNivel = 2;
+            if (matchesCurrent.length > 0) {
+                confrontosAtuais = matchesCurrent;
                 renderizarFase();
             } else {
-                document.getElementById('fase-label').innerText = "Dados da Fase 2 ainda não disponíveis no portal da CBF.";
+                document.getElementById('fase-label').innerText = "Dados não encontrados.";
             }
 
         } catch (e) {
@@ -320,15 +334,15 @@
                             ${t1.escudo ? `<img src="${t1.escudo}" class="shield">` : ''}
                             <span>${t1.nome.split(' - ')[0]}</span>
                         </div>
-                        <input type="number" class="score-input p1-score" min="0" placeholder="0">
+                        <input type="number" class="score-input p1-score" min="0" placeholder="0" title="Gols do jogo simulado">
                     </div>
-                    <div class="vs">AGREGADO</div>
+                    <div class="vs">Gols da Simulação (Restantes)</div>
                     <div class="team-row">
                         <div class="team-info">
                             ${t2.escudo ? `<img src="${t2.escudo}" class="shield">` : ''}
                             <span>${t2.nome.split(' - ')[0]}</span>
                         </div>
-                        <input type="number" class="score-input p2-score" min="0" placeholder="0">
+                        <input type="number" class="score-input p2-score" min="0" placeholder="0" title="Gols do jogo simulado">
                     </div>
                 </div>
             `;
@@ -341,21 +355,20 @@
     function avancarFase() {
         const cards = document.querySelectorAll('.match-card');
         let vencedores = [];
-        
         let erro = false;
+        
         cards.forEach((card, i) => {
             let p1Score = parseInt(card.querySelector('.p1-score').value);
             let p2Score = parseInt(card.querySelector('.p2-score').value);
             
             if (isNaN(p1Score) || isNaN(p2Score)) {
-                // Autopreencher com sorteio
-                p1Score = Math.floor(Math.random() * 4);
-                p2Score = Math.floor(Math.random() * 4);
-                while(p1Score === p2Score) { p2Score = Math.floor(Math.random() * 4); } // Força desempate
+                p1Score = Math.floor(Math.random() * 3);
+                p2Score = Math.floor(Math.random() * 3);
+                while(p1Score === p2Score) { p2Score = Math.floor(Math.random() * 3); }
                 card.querySelector('.p1-score').value = p1Score;
                 card.querySelector('.p2-score').value = p2Score;
             } else if (p1Score === p2Score) {
-                alert("O placar agregado não pode terminar em empate no mata-mata! Por favor, resolva os pênaltis simulando 1 gol a mais para o vencedor.");
+                alert("Para a simulação, defina um vencedor (não deixe empates, simule pênaltis adicionando 1 gol fictício ao vencedor para o cálculo funcionar).");
                 erro = true;
             }
             
@@ -365,17 +378,14 @@
             let t1 = times[par.m];
             let t2 = times[par.v];
             
-            // Atualiza estatísticas (assumindo que o score agregado são os gols pro/contra)
             t1.gp += p1Score; t1.gc += p2Score; t1.sg += (p1Score - p2Score);
             t2.gp += p2Score; t2.gc += p1Score; t2.sg += (p2Score - p1Score);
             
             if(p1Score > p2Score) {
                 t1.v += 1; t1.pts += 3;
-                t2.d += 1;
                 vencedores.push(t1);
             } else {
                 t2.v += 1; t2.pts += 3;
-                t1.d += 1;
                 vencedores.push(t2);
             }
         });
@@ -388,31 +398,46 @@
             return;
         }
 
-        // Se chegou nas Quartas (8 times), avisar acesso
-        if(faseAtualNivel === 4) { // Vai calcular a fase 5
+        if(faseAtualNivel === 4) {
             alert("Os vencedores desta próxima rodada garantirão o acesso à Série C!");
         } else if (faseAtualNivel === 5) {
-            alert("🎉 ACESSO DEFINIDO! Estes times já estão na Série C!");
+            alert("🎉 ACESSO DEFINIDO! Estes times estariam na Série C!");
         }
 
-        // Recalcular chaveamento baseado na campanha geral
+        // A PARTIR DAS OITAVAS (indo para fase 4 em diante), O CHAVEAMENTO É PELO RANKING GERAL!
+        // Como o usuário está simulando a 3ª Fase (faseAtualNivel = 3), os vencedores vão para a Fase 4.
+        // A regra diz: "a classificacao geral só é levada a partir das oitavas (4ª fase)".
+        // Então ao terminar a Fase 3 (e para todas as fases seguintes), rankeamos os classificados.
+        
         vencedores.sort((a, b) => {
             if (b.pts !== a.pts) return b.pts - a.pts;
             if (b.v !== a.v) return b.v - a.v;
             if (b.sg !== a.sg) return b.sg - a.sg;
-            return b.gp - a.gp; // Gols Pró
+            return b.gp - a.gp;
         });
         
         mostrarRanking(vencedores);
         
         let novosConfrontos = [];
         let n = vencedores.length;
-        // O 1º pega o último (n), 2º pega n-1, etc...
-        for(let i=0; i < n/2; i++) {
-            novosConfrontos.push({
-                m: vencedores[i].id,
-                v: vencedores[n - 1 - i].id
-            });
+        
+        if (faseAtualNivel >= 3) {
+            // Ranking Geral: 1º x 16º, 2º x 15º, etc
+            for(let i=0; i < n/2; i++) {
+                novosConfrontos.push({
+                    m: vencedores[i].id,
+                    v: vencedores[n - 1 - i].id
+                });
+            }
+        } else {
+            // Se fosse transição da 2ª para 3ª, a regra é bloco regional (chaveamento fixo).
+            // O simulador simplifica se rodado em fases anteriores assumindo adjacência.
+            for(let i=0; i < n; i+=2) {
+                novosConfrontos.push({
+                    m: vencedores[i].id,
+                    v: vencedores[i+1].id
+                });
+            }
         }
         
         confrontosAtuais = novosConfrontos;
@@ -420,7 +445,8 @@
         
         setTimeout(() => {
             renderizarFase();
-        }, 3000); // Dá um tempo para ver o ranking
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 4000); // 4 segundos para o usuário ver o ranking pop-up
     }
     
     function mostrarRanking(vencedores) {
@@ -438,12 +464,11 @@
                 </tr>
             `;
         });
-        document.getElementById('match-container').innerHTML = '<h3 style="color:var(--primary); text-align:center; width:100%; padding:30px;">Sorteando próximos confrontos...</h3>';
+        document.getElementById('match-container').innerHTML = '<h3 style="color:var(--primary); text-align:center; width:100%; padding:30px;">Cruzando as chaves pelo Ranking Geral...</h3>';
         document.getElementById('btn-avancar').style.display = 'none';
     }
 
     window.onload = inicializar;
-
 </script>
 </body>
 </html>
