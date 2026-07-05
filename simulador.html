@@ -236,7 +236,7 @@
 
 <div class="container">
     <div class="header">
-        <h1>🎲 Simulador Série D</h1>
+        <h1>Simulador Série D</h1>
         <a href="index.html" class="btn-voltar">← Voltar à Tabela</a>
     </div>
 
@@ -253,7 +253,7 @@
         <!-- Partidas serão injetadas aqui -->
     </div>
 
-    <button class="btn-acao" id="btn-avancar" style="display: none;" onclick="avancarFase()">Simular Resultados e Avançar Fase 🚀</button>
+    <button class="btn-acao" id="btn-avancar" style="display: none;" onclick="avancarFase()">Simular Resultados e Avançar Fase</button>
 
     <div id="ranking-modal">
         <h3>Classificação Geral Acumulada (Semente para Sorteio)</h3>
@@ -494,7 +494,7 @@
         if(erro) return;
 
         if (vencedores.length === 1) {
-            alert(`🏆 PARABÉNS! ${vencedores[0].nome} É O GRANDE CAMPEÃO!`);
+            alert(`PARABÉNS! ${vencedores[0].nome} É O GRANDE CAMPEÃO!`);
             document.getElementById('btn-avancar').style.display = 'none';
             return;
         }
@@ -502,7 +502,7 @@
         if(faseAtualNivel === 4) {
             alert("Atenção: Os próximos vencedores garantirão o ACESSO À SÉRIE C!");
         } else if (faseAtualNivel === 5) {
-            alert("🎉 ACESSO DEFINIDO! Estes 4 times estariam na Série C!");
+            alert("ACESSO DEFINIDO! Estes 4 times estariam na Série C!");
         }
 
         // A regra oficial diz: a classificação geral só é levada em conta nas QUARTAS DE FINAL (Fase 5) em diante.
