@@ -225,7 +225,6 @@
                 <tr>
                     <th>Pos</th>
                     <th class="team-name">Clube</th>
-                    <th>Fase Máx.</th>
                     <th>PTS</th>
                     <th>J</th>
                     <th>V</th>
@@ -237,7 +236,7 @@
                 </tr>
             </thead>
             <tbody id="tabela-corpo">
-                <tr><td colspan="11" class="loading">Carregando dados...</td></tr>
+                <tr><td colspan="10" class="loading">Carregando dados...</td></tr>
             </tbody>
         </table>
     </div>
@@ -245,17 +244,6 @@
 
 <script>
     let globalData = [];
-
-    function getBadgeClass(status) {
-        if (status === '1ª Fase') return 'status-fase1';
-        if (status === '2ª Fase') return 'status-fase2';
-        if (status === '3ª Fase') return 'status-fase3';
-        if (status === 'Oitavas') return 'status-oitavas';
-        if (status === 'Quartas') return 'status-quartas';
-        if (status === 'Semifinal') return 'status-semifinal';
-        if (status === 'Final') return 'status-final';
-        return 'status-fase1';
-    }
 
     function renderTable(filter) {
         const tbody = document.getElementById('tabela-corpo');
@@ -267,15 +255,13 @@
         }
 
         if (displayData.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="11" style="text-align:center; padding:20px; color:#94a3b8;">Nenhum time encontrado para este filtro.</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="10" style="text-align:center; padding:20px; color:#94a3b8;">Nenhum time encontrado para este filtro.</td></tr>';
             return;
         }
 
         displayData.forEach((time, index) => {
             const tr = document.createElement('tr');
             tr.style.animationDelay = `${(index % 20) * 0.05}s`; // Limitamos o delay para não ficar lento com muitos times
-            
-            let badgeClass = getBadgeClass(time.status);
 
             tr.innerHTML = `
                 <td>${index + 1}º</td>
@@ -283,7 +269,6 @@
                     ${time.escudo_url ? `<img src="${time.escudo_url}" class="shield" alt="Escudo">` : ''}
                     <span>${time.time}</span>
                 </td>
-                <td><span class="status-badge ${badgeClass}">${time.status || ''}</span></td>
                 <td><strong>${time.pontos}</strong></td>
                 <td>${time.jogos}</td>
                 <td>${time.vitorias}</td>
@@ -310,7 +295,7 @@
         .catch(error => {
             console.error('Erro ao carregar os dados:', error);
             document.getElementById('tabela-corpo').innerHTML = 
-                '<tr><td colspan="11" style="color: #ef4444; padding: 20px;">Erro ao carregar a tabela. Gere o arquivo JSON primeiro.</td></tr>';
+                '<tr><td colspan="10" style="color: #ef4444; padding: 20px;">Erro ao carregar a tabela. Gere o arquivo JSON primeiro.</td></tr>';
         });
 
     document.getElementById('fase-filter').addEventListener('change', (e) => {

@@ -76,9 +76,9 @@ def extrair_partidas_fase(url_fase, nome_fase="Mata-Mata"):
                 
             print(f"[{grupo} - {ida_volta} | {num_jogo}] {placar_str}")
             
-            # Ignora jogos que ainda não aconteceram (placar vazio)
-            if not mandante_placar.strip() or not visitante_placar.strip():
-                continue
+            # Ignora jogos que ainda não aconteceram na hora de somar, mas precisamos salvar para registrar que o time chegou na fase
+            placar_m_val = int(mandante_placar) if mandante_placar.strip() else None
+            placar_v_val = int(visitante_placar) if visitante_placar.strip() else None
                 
             lista_partidas.append({
                 "nome_fase": nome_fase,
@@ -87,11 +87,11 @@ def extrair_partidas_fase(url_fase, nome_fase="Mata-Mata"):
                 "jogo": num_jogo,
                 "mandante_id": mandante_id,
                 "mandante": mandante_nome,
-                "placar_mandante": int(mandante_placar),
+                "placar_mandante": placar_m_val,
                 "penaltis_mandante": int(mandante_penaltis) if mandante_penaltis else None,
                 "visitante_id": visitante_id,
                 "visitante": visitante_nome,
-                "placar_visitante": int(visitante_placar),
+                "placar_visitante": placar_v_val,
                 "penaltis_visitante": int(visitante_penaltis) if visitante_penaltis else None,
                 "detalhes": detalhes
             })

@@ -62,7 +62,7 @@ def processar_tabela_geral():
                 break
 
         if chave_m in tabela_geral and chave_v in tabela_geral:
-            # Atualiza o status/fase máxima que o time alcançou
+            # Atualiza o status/fase máxima que o time alcançou SEMPRE (mesmo se o jogo não ocorreu)
             if tabela_geral[chave_m]["fase_nivel"] < nivel:
                 tabela_geral[chave_m]["fase_nivel"] = nivel
                 tabela_geral[chave_m]["status"] = nome_fase
@@ -71,31 +71,33 @@ def processar_tabela_geral():
                 tabela_geral[chave_v]["fase_nivel"] = nivel
                 tabela_geral[chave_v]["status"] = nome_fase
 
-            tabela_geral[chave_m]["jogos"] += 1
-            tabela_geral[chave_v]["jogos"] += 1
-            
-            tabela_geral[chave_m]["gols_pro"] += gols_m
-            tabela_geral[chave_m]["gols_contra"] += gols_v
-            
-            tabela_geral[chave_v]["gols_pro"] += gols_v
-            tabela_geral[chave_v]["gols_contra"] += gols_m
+            # Se o jogo já aconteceu, computa pontos e gols
+            if gols_m is not None and gols_v is not None:
+                tabela_geral[chave_m]["jogos"] += 1
+                tabela_geral[chave_v]["jogos"] += 1
+                
+                tabela_geral[chave_m]["gols_pro"] += gols_m
+                tabela_geral[chave_m]["gols_contra"] += gols_v
+                
+                tabela_geral[chave_v]["gols_pro"] += gols_v
+                tabela_geral[chave_v]["gols_contra"] += gols_m
 
-            if gols_m > gols_v:
-                tabela_geral[chave_m]["pontos"] += 3
-                tabela_geral[chave_m]["vitorias"] += 1
-                tabela_geral[chave_v]["derrotas"] += 1
-            elif gols_m < gols_v:
-                tabela_geral[chave_v]["pontos"] += 3
-                tabela_geral[chave_v]["vitorias"] += 1
-                tabela_geral[chave_m]["derrotas"] += 1
-            else:
-                tabela_geral[chave_m]["pontos"] += 1
-                tabela_geral[chave_m]["empates"] += 1
-                tabela_geral[chave_v]["pontos"] += 1
-                tabela_geral[chave_v]["empates"] += 1
+                if gols_m > gols_v:
+                    tabela_geral[chave_m]["pontos"] += 3
+                    tabela_geral[chave_m]["vitorias"] += 1
+                    tabela_geral[chave_v]["derrotas"] += 1
+                elif gols_m < gols_v:
+                    tabela_geral[chave_v]["pontos"] += 3
+                    tabela_geral[chave_v]["vitorias"] += 1
+                    tabela_geral[chave_m]["derrotas"] += 1
+                else:
+                    tabela_geral[chave_m]["pontos"] += 1
+                    tabela_geral[chave_m]["empates"] += 1
+                    tabela_geral[chave_v]["pontos"] += 1
+                    tabela_geral[chave_v]["empates"] += 1
 
-            tabela_geral[chave_m]["saldo_gols"] = tabela_geral[chave_m]["gols_pro"] - tabela_geral[chave_m]["gols_contra"]
-            tabela_geral[chave_v]["saldo_gols"] = tabela_geral[chave_v]["gols_pro"] - tabela_geral[chave_v]["gols_contra"]
+                tabela_geral[chave_m]["saldo_gols"] = tabela_geral[chave_m]["gols_pro"] - tabela_geral[chave_m]["gols_contra"]
+                tabela_geral[chave_v]["saldo_gols"] = tabela_geral[chave_v]["gols_pro"] - tabela_geral[chave_v]["gols_contra"]
 
     lista_final = list(tabela_geral.values())
     lista_final.sort(

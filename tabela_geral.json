@@ -416,8 +416,8 @@
         "gols_pro": 13,
         "gols_contra": 8,
         "saldo_gols": 5,
-        "fase_nivel": 2,
-        "status": "2ª Fase"
+        "fase_nivel": 3,
+        "status": "3ª Fase"
     },
     {
         "club_id": "64669",
@@ -626,8 +626,8 @@
         "gols_pro": 13,
         "gols_contra": 14,
         "saldo_gols": -1,
-        "fase_nivel": 2,
-        "status": "2ª Fase"
+        "fase_nivel": 3,
+        "status": "3ª Fase"
     },
     {
         "club_id": "20380",
