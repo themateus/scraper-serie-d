@@ -2,7 +2,7 @@
     {
         "club_id": "20098",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20098%2Fescudo.jpg&w=256&q=70",
-        "time": "Gama",
+        "time": "Gama - DF",
         "pontos": 32,
         "jogos": 13,
         "vitorias": 10,
@@ -17,7 +17,7 @@
     {
         "club_id": "62025",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62025%2Fescudo.jpg&w=256&q=70",
-        "time": "America F.c. Saf",
+        "time": "America - RJ",
         "pontos": 30,
         "jogos": 13,
         "vitorias": 9,
@@ -32,7 +32,7 @@
     {
         "club_id": "59102",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F59102%2Fescudo.jpg&w=256&q=70",
-        "time": "Manauara",
+        "time": "Manauara - AM",
         "pontos": 29,
         "jogos": 13,
         "vitorias": 8,
@@ -47,7 +47,7 @@
     {
         "club_id": "37743",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F37743%2Fescudo.jpg&w=256&q=70",
-        "time": "Capital",
+        "time": "Capital - TO",
         "pontos": 27,
         "jogos": 13,
         "vitorias": 8,
@@ -62,7 +62,7 @@
     {
         "club_id": "20042",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20042%2Fescudo.jpg&w=256&q=70",
-        "time": "Abc F. C.",
+        "time": "ABC - RN",
         "pontos": 27,
         "jogos": 13,
         "vitorias": 8,
@@ -77,7 +77,7 @@
     {
         "club_id": "20050",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20050%2Fescudo.jpg&w=256&q=70",
-        "time": "Nacional",
+        "time": "Nacional - AM",
         "pontos": 27,
         "jogos": 13,
         "vitorias": 8,
@@ -92,7 +92,7 @@
     {
         "club_id": "35361",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35361%2Fescudo.jpg&w=256&q=70",
-        "time": "Iguatu",
+        "time": "Iguatu - CE",
         "pontos": 27,
         "jogos": 13,
         "vitorias": 7,
@@ -107,7 +107,7 @@
     {
         "club_id": "63521",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63521%2Fescudo.jpg&w=256&q=70",
-        "time": "Portuguesa Saf",
+        "time": "Portuguesa - SP",
         "pontos": 26,
         "jogos": 13,
         "vitorias": 7,
@@ -122,7 +122,7 @@
     {
         "club_id": "20091",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20091%2Fescudo.jpg&w=256&q=70",
-        "time": "Ferroviário",
+        "time": "Ferroviário - CE",
         "pontos": 26,
         "jogos": 13,
         "vitorias": 7,
@@ -137,7 +137,7 @@
     {
         "club_id": "20045",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20045%2Fescudo.jpg&w=256&q=70",
-        "time": "Csa",
+        "time": "CSA - AL",
         "pontos": 25,
         "jogos": 13,
         "vitorias": 7,
@@ -152,7 +152,7 @@
     {
         "club_id": "53757",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F53757%2Fescudo.jpg&w=256&q=70",
-        "time": "Guaporé F.c.",
+        "time": "Guaporé - RO",
         "pontos": 25,
         "jogos": 13,
         "vitorias": 7,
@@ -167,7 +167,7 @@
     {
         "club_id": "64223",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64223%2Fescudo.jpg&w=256&q=70",
-        "time": "Uberlândia Saf",
+        "time": "Uberlândia - MG",
         "pontos": 25,
         "jogos": 13,
         "vitorias": 7,
@@ -182,7 +182,7 @@
     {
         "club_id": "20782",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20782%2Fescudo.jpg&w=256&q=70",
-        "time": "Aguia de Maraba",
+        "time": "Aguia de Maraba - PA",
         "pontos": 24,
         "jogos": 13,
         "vitorias": 7,
@@ -197,7 +197,7 @@
     {
         "club_id": "20810",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20810%2Fescudo.jpg&w=256&q=70",
-        "time": "Trem",
+        "time": "Trem - AP",
         "pontos": 23,
         "jogos": 13,
         "vitorias": 7,
@@ -212,7 +212,7 @@
     {
         "club_id": "56220",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F56220%2Fescudo.jpg&w=256&q=70",
-        "time": "Gazin Porto Velho",
+        "time": "Gazin Porto Velho - RO",
         "pontos": 23,
         "jogos": 13,
         "vitorias": 6,
@@ -227,7 +227,7 @@
     {
         "club_id": "20101",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20101%2Fescudo.jpg&w=256&q=70",
-        "time": "Goiatuba",
+        "time": "Goiatuba - GO",
         "pontos": 23,
         "jogos": 13,
         "vitorias": 6,
@@ -242,7 +242,7 @@
     {
         "club_id": "20816",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20816%2Fescudo.jpg&w=256&q=70",
-        "time": "Leão do Vale - Cianorte",
+        "time": "Leão do Vale - Cianorte - PR",
         "pontos": 22,
         "jogos": 13,
         "vitorias": 7,
@@ -257,7 +257,7 @@
     {
         "club_id": "21725",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21725%2Fescudo.jpg&w=256&q=70",
-        "time": "Luverdense",
+        "time": "Luverdense - MT",
         "pontos": 22,
         "jogos": 13,
         "vitorias": 6,
@@ -272,7 +272,7 @@
     {
         "club_id": "39727",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F39727%2Fescudo.jpg&w=256&q=70",
-        "time": "Santa Catarina Clube",
+        "time": "Santa Catarina - SC",
         "pontos": 21,
         "jogos": 12,
         "vitorias": 6,
@@ -287,7 +287,7 @@
     {
         "club_id": "63571",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63571%2Fescudo.jpg&w=256&q=70",
-        "time": "Blumenau",
+        "time": "Blumenau - SC",
         "pontos": 21,
         "jogos": 12,
         "vitorias": 6,
@@ -302,7 +302,7 @@
     {
         "club_id": "20071",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20071%2Fescudo.jpg&w=256&q=70",
-        "time": "Treze",
+        "time": "Treze - PB",
         "pontos": 21,
         "jogos": 13,
         "vitorias": 6,
@@ -317,7 +317,7 @@
     {
         "club_id": "34709",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F34709%2Fescudo.jpg&w=256&q=70",
-        "time": "Betim Futebol",
+        "time": "Betim Futebol - MG",
         "pontos": 21,
         "jogos": 13,
         "vitorias": 6,
@@ -332,7 +332,7 @@
     {
         "club_id": "37846",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F37846%2Fescudo.jpg&w=256&q=70",
-        "time": "Serra Branca Esporte Clube",
+        "time": "Serra Branca - PB",
         "pontos": 21,
         "jogos": 13,
         "vitorias": 5,
@@ -347,7 +347,7 @@
     {
         "club_id": "35330",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35330%2Fescudo.jpg&w=256&q=70",
-        "time": "Maracana",
+        "time": "Maracana - CE",
         "pontos": 21,
         "jogos": 12,
         "vitorias": 5,
@@ -362,7 +362,7 @@
     {
         "club_id": "20207",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20207%2Fescudo.jpg&w=256&q=70",
-        "time": "Marcílio Dias",
+        "time": "Marcílio Dias - SC",
         "pontos": 21,
         "jogos": 13,
         "vitorias": 5,
@@ -377,7 +377,7 @@
     {
         "club_id": "20072",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20072%2Fescudo.jpg&w=256&q=70",
-        "time": "Xv de Piracicaba",
+        "time": "Xv de Piracicaba - SP",
         "pontos": 21,
         "jogos": 13,
         "vitorias": 5,
@@ -392,7 +392,7 @@
     {
         "club_id": "20111",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20111%2Fescudo.jpg&w=256&q=70",
-        "time": "Piauí",
+        "time": "Piauí - PI",
         "pontos": 20,
         "jogos": 12,
         "vitorias": 6,
@@ -407,7 +407,7 @@
     {
         "club_id": "20108",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20108%2Fescudo.jpg&w=256&q=70",
-        "time": "Asa",
+        "time": "ASA - AL",
         "pontos": 20,
         "jogos": 12,
         "vitorias": 5,
@@ -422,7 +422,7 @@
     {
         "club_id": "64669",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64669%2Fescudo.jpg&w=256&q=70",
-        "time": "CRAC",
+        "time": "CRAC - GO",
         "pontos": 20,
         "jogos": 13,
         "vitorias": 5,
@@ -437,7 +437,7 @@
     {
         "club_id": "21745",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21745%2Fescudo.jpg&w=256&q=70",
-        "time": "Araguaina Futebol E Regatas",
+        "time": "Araguaina - TO",
         "pontos": 19,
         "jogos": 12,
         "vitorias": 5,
@@ -452,7 +452,7 @@
     {
         "club_id": "31399",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F31399%2Fescudo.jpg&w=256&q=70",
-        "time": "Água Santa",
+        "time": "Água Santa - SP",
         "pontos": 19,
         "jogos": 12,
         "vitorias": 5,
@@ -467,7 +467,7 @@
     {
         "club_id": "20081",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20081%2Fescudo.jpg&w=256&q=70",
-        "time": "Vitoria F. C.",
+        "time": "Vitoria - ES",
         "pontos": 18,
         "jogos": 12,
         "vitorias": 5,
@@ -482,7 +482,7 @@
     {
         "club_id": "20432",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20432%2Fescudo.jpg&w=256&q=70",
-        "time": "Democrata",
+        "time": "Democrata - MG",
         "pontos": 18,
         "jogos": 12,
         "vitorias": 5,
@@ -497,7 +497,7 @@
     {
         "club_id": "20805",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20805%2Fescudo.jpg&w=256&q=70",
-        "time": "Portuguesa",
+        "time": "Portuguesa - RJ",
         "pontos": 18,
         "jogos": 13,
         "vitorias": 4,
@@ -512,7 +512,7 @@
     {
         "club_id": "34027",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F34027%2Fescudo.jpg&w=256&q=70",
-        "time": "Tombense",
+        "time": "Tombense - MG",
         "pontos": 18,
         "jogos": 12,
         "vitorias": 4,
@@ -527,7 +527,7 @@
     {
         "club_id": "20372",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20372%2Fescudo.jpg&w=256&q=70",
-        "time": "Imperatriz",
+        "time": "Imperatriz - MA",
         "pontos": 18,
         "jogos": 13,
         "vitorias": 4,
@@ -542,7 +542,7 @@
     {
         "club_id": "31535",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F31535%2Fescudo.jpg&w=256&q=70",
-        "time": "Velo Clube",
+        "time": "Velo - SP",
         "pontos": 18,
         "jogos": 13,
         "vitorias": 4,
@@ -557,7 +557,7 @@
     {
         "club_id": "20319",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20319%2Fescudo.jpg&w=256&q=70",
-        "time": "São José",
+        "time": "SÃO José - SP",
         "pontos": 18,
         "jogos": 13,
         "vitorias": 4,
@@ -572,7 +572,7 @@
     {
         "club_id": "35212",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35212%2Fescudo.jpg&w=256&q=70",
-        "time": "Juazeirense",
+        "time": "Juazeirense - BA",
         "pontos": 17,
         "jogos": 12,
         "vitorias": 5,
@@ -587,7 +587,7 @@
     {
         "club_id": "20429",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20429%2Fescudo.jpg&w=256&q=70",
-        "time": "Parnahyba",
+        "time": "Parnahyba - PI",
         "pontos": 17,
         "jogos": 12,
         "vitorias": 5,
@@ -602,7 +602,7 @@
     {
         "club_id": "33061",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F33061%2Fescudo.jpg&w=256&q=70",
-        "time": "São Luiz",
+        "time": "SÃO Luiz - RS",
         "pontos": 17,
         "jogos": 13,
         "vitorias": 4,
@@ -617,7 +617,7 @@
     {
         "club_id": "21817",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21817%2Fescudo.jpg&w=256&q=70",
-        "time": "Ivinhema Futebol Clube",
+        "time": "Ivinhema - MS",
         "pontos": 17,
         "jogos": 12,
         "vitorias": 4,
@@ -632,7 +632,7 @@
     {
         "club_id": "20380",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20380%2Fescudo.jpg&w=256&q=70",
-        "time": "Independência",
+        "time": "Independência - AC",
         "pontos": 16,
         "jogos": 12,
         "vitorias": 4,
@@ -647,7 +647,7 @@
     {
         "club_id": "20056",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20056%2Fescudo.jpg&w=256&q=70",
-        "time": "Sampaio Corrêa",
+        "time": "Sampaio Corrêa - MA",
         "pontos": 16,
         "jogos": 12,
         "vitorias": 4,
@@ -662,7 +662,7 @@
     {
         "club_id": "21922",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21922%2Fescudo.jpg&w=256&q=70",
-        "time": "Cascavel",
+        "time": "Cascavel - PR",
         "pontos": 16,
         "jogos": 12,
         "vitorias": 4,
@@ -677,7 +677,7 @@
     {
         "club_id": "20082",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20082%2Fescudo.jpg&w=256&q=70",
-        "time": "Noroeste",
+        "time": "Noroeste - SP",
         "pontos": 16,
         "jogos": 12,
         "vitorias": 4,
@@ -692,7 +692,7 @@
     {
         "club_id": "59116",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F59116%2Fescudo.jpg&w=256&q=70",
-        "time": "Maguary",
+        "time": "Maguary - PE",
         "pontos": 16,
         "jogos": 13,
         "vitorias": 4,
@@ -707,7 +707,7 @@
     {
         "club_id": "20034",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20034%2Fescudo.jpg&w=256&q=70",
-        "time": "Sergipe",
+        "time": "Sergipe - SE",
         "pontos": 16,
         "jogos": 12,
         "vitorias": 4,
@@ -722,7 +722,7 @@
     {
         "club_id": "54488",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F54488%2Fescudo.jpg&w=256&q=70",
-        "time": "Sãojoseense",
+        "time": "Sãojoseense - PR",
         "pontos": 16,
         "jogos": 12,
         "vitorias": 4,
@@ -737,7 +737,7 @@
     {
         "club_id": "20076",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20076%2Fescudo.jpg&w=256&q=70",
-        "time": "Joinville",
+        "time": "Joinville - SC",
         "pontos": 15,
         "jogos": 10,
         "vitorias": 4,
@@ -752,7 +752,7 @@
     {
         "club_id": "21638",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21638%2Fescudo.jpg&w=256&q=70",
-        "time": "São Raimundo",
+        "time": "SÃO Raimundo - RR",
         "pontos": 15,
         "jogos": 12,
         "vitorias": 3,
@@ -767,7 +767,7 @@
     {
         "club_id": "62652",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62652%2Fescudo.jpg&w=256&q=70",
-        "time": "Brasiliense",
+        "time": "Brasiliense - DF",
         "pontos": 15,
         "jogos": 12,
         "vitorias": 3,
@@ -782,7 +782,7 @@
     {
         "club_id": "62546",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62546%2Fescudo.jpg&w=256&q=70",
-        "time": "Rio Branco",
+        "time": "RIO Branco - AC",
         "pontos": 14,
         "jogos": 12,
         "vitorias": 3,
@@ -797,7 +797,7 @@
     {
         "club_id": "35775",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35775%2Fescudo.jpg&w=256&q=70",
-        "time": "Fluminense",
+        "time": "Fluminense - PI",
         "pontos": 14,
         "jogos": 12,
         "vitorias": 3,
@@ -812,7 +812,7 @@
     {
         "club_id": "20112",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20112%2Fescudo.jpg&w=256&q=70",
-        "time": "Central de Caruaru",
+        "time": "Central de Caruaru - PE",
         "pontos": 14,
         "jogos": 12,
         "vitorias": 3,
@@ -827,7 +827,7 @@
     {
         "club_id": "35680",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35680%2Fescudo.jpg&w=256&q=70",
-        "time": "Lagarto F.c.",
+        "time": "Lagarto - SE",
         "pontos": 14,
         "jogos": 12,
         "vitorias": 3,
@@ -842,7 +842,7 @@
     {
         "club_id": "21889",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21889%2Fescudo.jpg&w=256&q=70",
-        "time": "Aparecidense",
+        "time": "Aparecidense - GO",
         "pontos": 14,
         "jogos": 12,
         "vitorias": 3,
@@ -857,7 +857,7 @@
     {
         "club_id": "20100",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20100%2Fescudo.jpg&w=256&q=70",
-        "time": "Tuna Luso",
+        "time": "Tuna Luso - PA",
         "pontos": 14,
         "jogos": 12,
         "vitorias": 3,
@@ -872,7 +872,7 @@
     {
         "club_id": "35152",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35152%2Fescudo.jpg&w=256&q=70",
-        "time": "Jacuipense",
+        "time": "Jacuipense - BA",
         "pontos": 14,
         "jogos": 12,
         "vitorias": 3,
@@ -887,7 +887,7 @@
     {
         "club_id": "63519",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63519%2Fescudo.jpg&w=256&q=70",
-        "time": "Ceilândia Saf",
+        "time": "Ceilândia - DF",
         "pontos": 13,
         "jogos": 12,
         "vitorias": 3,
@@ -902,7 +902,7 @@
     {
         "club_id": "32387",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F32387%2Fescudo.jpg&w=256&q=70",
-        "time": "Sampaio Correa",
+        "time": "Sampaio Correa - RJ",
         "pontos": 13,
         "jogos": 12,
         "vitorias": 3,
@@ -917,7 +917,7 @@
     {
         "club_id": "62190",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62190%2Fescudo.jpg&w=256&q=70",
-        "time": "Monte Roraima",
+        "time": "Monte Roraima - RR",
         "pontos": 13,
         "jogos": 12,
         "vitorias": 3,
@@ -932,7 +932,7 @@
     {
         "club_id": "20046",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20046%2Fescudo.jpg&w=256&q=70",
-        "time": "América",
+        "time": "América - RN",
         "pontos": 13,
         "jogos": 12,
         "vitorias": 3,
@@ -947,7 +947,7 @@
     {
         "club_id": "20288",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20288%2Fescudo.jpg&w=256&q=70",
-        "time": "Tocantinopolis",
+        "time": "Tocantinopolis - TO",
         "pontos": 12,
         "jogos": 10,
         "vitorias": 3,
@@ -962,7 +962,7 @@
     {
         "club_id": "63665",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63665%2Fescudo.jpg&w=256&q=70",
-        "time": "Abecat Saf",
+        "time": "Abecat - GO",
         "pontos": 12,
         "jogos": 10,
         "vitorias": 3,
@@ -977,7 +977,7 @@
     {
         "club_id": "55531",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F55531%2Fescudo.jpg&w=256&q=70",
-        "time": "Retrô",
+        "time": "Retrô - PE",
         "pontos": 12,
         "jogos": 10,
         "vitorias": 3,
@@ -992,7 +992,7 @@
     {
         "club_id": "59905",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F59905%2Fescudo.jpg&w=256&q=70",
-        "time": "Primavera Atlético Clube",
+        "time": "Primavera Atlético - SP",
         "pontos": 12,
         "jogos": 10,
         "vitorias": 3,
@@ -1007,7 +1007,7 @@
     {
         "club_id": "64287",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64287%2Fescudo.jpg&w=256&q=70",
-        "time": "Nova Iguaçu Saf",
+        "time": "Nova Iguaçu - RJ",
         "pontos": 12,
         "jogos": 10,
         "vitorias": 3,
@@ -1022,7 +1022,7 @@
     {
         "club_id": "53914",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F53914%2Fescudo.jpg&w=256&q=70",
-        "time": "Altos",
+        "time": "Altos - PI",
         "pontos": 12,
         "jogos": 12,
         "vitorias": 3,
@@ -1037,7 +1037,7 @@
     {
         "club_id": "20064",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20064%2Fescudo.jpg&w=256&q=70",
-        "time": "Mixto",
+        "time": "Mixto - MT",
         "pontos": 12,
         "jogos": 12,
         "vitorias": 2,
@@ -1052,7 +1052,7 @@
     {
         "club_id": "20249",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20249%2Fescudo.jpg&w=256&q=70",
-        "time": "Madureira",
+        "time": "Madureira - RJ",
         "pontos": 11,
         "jogos": 10,
         "vitorias": 3,
@@ -1067,7 +1067,7 @@
     {
         "club_id": "32036",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F32036%2Fescudo.jpg&w=256&q=70",
-        "time": "Marica",
+        "time": "Marica - RJ",
         "pontos": 11,
         "jogos": 10,
         "vitorias": 3,
@@ -1082,7 +1082,7 @@
     {
         "club_id": "20390",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20390%2Fescudo.jpg&w=256&q=70",
-        "time": "Sousa",
+        "time": "Sousa - PB",
         "pontos": 10,
         "jogos": 10,
         "vitorias": 3,
@@ -1097,7 +1097,7 @@
     {
         "club_id": "62328",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62328%2Fescudo.jpg&w=256&q=70",
-        "time": "Porto Sport Club",
+        "time": "Porto - BA",
         "pontos": 10,
         "jogos": 10,
         "vitorias": 3,
@@ -1112,7 +1112,7 @@
     {
         "club_id": "32816",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F32816%2Fescudo.jpg&w=256&q=70",
-        "time": "Galvez",
+        "time": "Galvez - AC",
         "pontos": 10,
         "jogos": 10,
         "vitorias": 3,
@@ -1127,7 +1127,7 @@
     {
         "club_id": "62217",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F62217%2Fescudo.jpg&w=256&q=70",
-        "time": "Tirol - SAF",
+        "time": "Tirol - CE",
         "pontos": 10,
         "jogos": 10,
         "vitorias": 2,
@@ -1142,7 +1142,7 @@
     {
         "club_id": "64810",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64810%2Fescudo.jpg&w=256&q=70",
-        "time": "Gremio Esportivo Brasil SAF",
+        "time": "Gremio Esportivo Brasil - RS",
         "pontos": 10,
         "jogos": 10,
         "vitorias": 2,
@@ -1157,7 +1157,7 @@
     {
         "club_id": "52844",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F52844%2Fescudo.jpg&w=256&q=70",
-        "time": "Manaus",
+        "time": "Manaus - AM",
         "pontos": 10,
         "jogos": 10,
         "vitorias": 2,
@@ -1172,7 +1172,7 @@
     {
         "club_id": "20041",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20041%2Fescudo.jpg&w=256&q=70",
-        "time": "Operário",
+        "time": "Operário - MS",
         "pontos": 9,
         "jogos": 10,
         "vitorias": 2,
@@ -1187,7 +1187,7 @@
     {
         "club_id": "56804",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F56804%2Fescudo.jpg&w=256&q=70",
-        "time": "Azuriz",
+        "time": "Azuriz - PR",
         "pontos": 9,
         "jogos": 10,
         "vitorias": 2,
@@ -1202,7 +1202,7 @@
     {
         "club_id": "20287",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20287%2Fescudo.jpg&w=256&q=70",
-        "time": "União",
+        "time": "União - MT",
         "pontos": 9,
         "jogos": 10,
         "vitorias": 2,
@@ -1217,7 +1217,7 @@
     {
         "club_id": "35522",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35522%2Fescudo.jpg&w=256&q=70",
-        "time": "Cse",
+        "time": "CSE - AL",
         "pontos": 9,
         "jogos": 10,
         "vitorias": 2,
@@ -1232,7 +1232,7 @@
     {
         "club_id": "20029",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20029%2Fescudo.jpg&w=256&q=70",
-        "time": "Moto Club",
+        "time": "Moto Club - MA",
         "pontos": 9,
         "jogos": 10,
         "vitorias": 2,
@@ -1247,7 +1247,7 @@
     {
         "club_id": "35768",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35768%2Fescudo.jpg&w=256&q=70",
-        "time": "Decisão",
+        "time": "Decisão - PE",
         "pontos": 8,
         "jogos": 10,
         "vitorias": 2,
@@ -1262,7 +1262,7 @@
     {
         "club_id": "21942",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21942%2Fescudo.jpg&w=256&q=70",
-        "time": "Real Noroeste Capixaba F. C.",
+        "time": "Real Noroeste Capixaba - ES",
         "pontos": 8,
         "jogos": 10,
         "vitorias": 1,
@@ -1277,7 +1277,7 @@
     {
         "club_id": "63322",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F63322%2Fescudo.jpg&w=256&q=70",
-        "time": "Pouso Alegre Saf",
+        "time": "Pouso Alegre - MG",
         "pontos": 7,
         "jogos": 10,
         "vitorias": 2,
@@ -1292,7 +1292,7 @@
     {
         "club_id": "35316",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35316%2Fescudo.jpg&w=256&q=70",
-        "time": "Fc Atlético Cearense",
+        "time": "Atlético Cearense - CE",
         "pontos": 7,
         "jogos": 10,
         "vitorias": 1,
@@ -1307,7 +1307,7 @@
     {
         "club_id": "20353",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20353%2Fescudo.jpg&w=256&q=70",
-        "time": "Sampaio",
+        "time": "Sampaio - RR",
         "pontos": 5,
         "jogos": 10,
         "vitorias": 1,
@@ -1322,7 +1322,7 @@
     {
         "club_id": "35079",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F35079%2Fescudo.jpg&w=256&q=70",
-        "time": "Operário",
+        "time": "Operário - MT",
         "pontos": 5,
         "jogos": 10,
         "vitorias": 1,
@@ -1337,7 +1337,7 @@
     {
         "club_id": "20236",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20236%2Fescudo.jpg&w=256&q=70",
-        "time": "Atlético de Alagoinhas",
+        "time": "Atlético de Alagoinhas - BA",
         "pontos": 5,
         "jogos": 10,
         "vitorias": 1,
@@ -1352,7 +1352,7 @@
     {
         "club_id": "20225",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20225%2Fescudo.jpg&w=256&q=70",
-        "time": "Guarany FC",
+        "time": "Guarany - CE",
         "pontos": 4,
         "jogos": 10,
         "vitorias": 1,
@@ -1367,7 +1367,7 @@
     {
         "club_id": "21829",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21829%2Fescudo.jpg&w=256&q=70",
-        "time": "Oratório",
+        "time": "Oratório - AP",
         "pontos": 4,
         "jogos": 10,
         "vitorias": 1,
@@ -1382,7 +1382,7 @@
     {
         "club_id": "21894",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F21894%2Fescudo.jpg&w=256&q=70",
-        "time": "Iape",
+        "time": "Iape - MA",
         "pontos": 4,
         "jogos": 10,
         "vitorias": 0,
@@ -1397,7 +1397,7 @@
     {
         "club_id": "60415",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F60415%2Fescudo.jpg&w=256&q=70",
-        "time": "Laguna",
+        "time": "Laguna - RN",
         "pontos": 2,
         "jogos": 10,
         "vitorias": 0,
@@ -1412,7 +1412,7 @@
     {
         "club_id": "37539",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F37539%2Fescudo.jpg&w=256&q=70",
-        "time": "Inhumas E. C.",
+        "time": "Inhumas - GO",
         "pontos": 1,
         "jogos": 10,
         "vitorias": 0,
@@ -1427,7 +1427,7 @@
     {
         "club_id": "54133",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F54133%2Fescudo.jpg&w=256&q=70",
-        "time": "Humaitá",
+        "time": "Humaitá - AC",
         "pontos": 0,
         "jogos": 10,
         "vitorias": 0,

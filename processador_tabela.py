@@ -1,4 +1,5 @@
 import json
+import re
 
 def carregar_json(nome_arquivo):
     try:
@@ -6,6 +7,75 @@ def carregar_json(nome_arquivo):
             return json.load(f)
     except FileNotFoundError:
         return []
+
+ESTADOS_TIMES = {
+    "Abc": "RN", "Abecat": "GO", "Água Santa": "SP", "Aguia": "PA", "Altos": "PI", 
+    "Aparecidense": "GO", "Araguaina": "TO", "Asa": "AL",
+    "Atlético de Alagoinhas": "BA", "Azuriz": "PR", "Betim": "MG", "Blumenau": "SC", "Brasiliense": "DF",
+    "Capital": "TO", "Cascavel": "PR", "Ceilândia": "DF", "Central": "PE", "Crac": "GO",
+    "Csa": "AL", "Cse": "AL", "Decisão": "PE", "Democrata": "MG", "Atlético Cearense": "CE",
+    "Ferroviário": "CE", "Fluminense": "PI", "Galvez": "AC", "Gama": "DF", "Porto Velho": "RO",
+    "Goiatuba": "GO", "Brasil": "RS", "Guaporé": "RO", "Guarany": "CE", "Humaitá": "AC",
+    "Iape": "MA", "Iguatu": "CE", "Imperatriz": "MA", "Independência": "AC", "Inhumas": "GO",
+    "Ivinhema": "MS", "Jacuipense": "BA", "Joinville": "SC", "Juazeirense": "BA", "Lagarto": "SE",
+    "Laguna": "RN", "Cianorte": "PR", "Luverdense": "MT", "Madureira": "RJ",
+    "Maguary": "PE", "Manauara": "AM", "Manaus": "AM", "Maracana": "CE", "Marcílio Dias": "SC",
+    "Marica": "RJ", "Mixto": "MT", "Monte Roraima": "RR", "Moto Club": "MA", "Nacional": "AM",
+    "Noroeste": "SP", "Nova Iguaçu": "RJ", "Operário": "MS", "Oratório": "AP", "Parnahyba": "PI",
+    "Piauí": "PI", "Porto Sport": "BA", "Porto": "PE", "Pouso Alegre": "MG",
+    "Primavera": "SP", "Real Noroeste": "ES", "Retrô": "PE", "Rio Branco": "AC",
+    "Santa Catarina": "SC", "Sãojoseense": "PR", "São Luiz": "RS", "São Raimundo": "RR", "Sergipe": "SE", "Serra Branca": "PB",
+    "Sousa": "PB", "Tirol": "CE", "Tocantinopolis": "TO", "Tombense": "MG", "Trem": "AP", "Treze": "PB",
+    "Tuna Luso": "PA", "Uberlândia": "MG", "União": "MT", "Velo Clube": "SP", "Vitoria": "ES",
+    "Xv de Piracicaba": "SP", "São José": "SP"
+}
+
+def limpar_e_adicionar_estado(nome_original, club_id):
+    nome = nome_original
+    
+    # 1. Remover SAF, FC e derivações
+    padroes = [
+        r'\bsaf\b', r'\bf\s*\.\s*c\s*\.?', r'\bfc\b', 
+        r'\be\s*\.\s*c\s*\.?', r'\bec\b',
+        r'\besporte clube\b', r'\bfutebol clube\b', r'\bfutebol e regatas\b', 
+        r'\bclube\b', r'\bsport club\b'
+    ]
+    for p in padroes:
+        nome = re.sub(p, '', nome, flags=re.IGNORECASE)
+    
+    # Limpa espaços e hifens soltos
+    nome = ' '.join(nome.split())
+    nome = nome.strip(' -')
+    
+    # 2. Palavras de 3 letras na primeira palavra em maiúsculo (ex: Abc -> ABC)
+    partes = nome.split()
+    if partes and len(partes[0]) == 3:
+        partes[0] = partes[0].upper()
+    nome = ' '.join(partes)
+
+    # 3. Adicionar Estado
+    estado = ""
+    # Hardcoded conhecidos que geram duplicatas ou nomes comuns
+    if club_id == "20046": estado = "RN"
+    elif club_id == "62025": estado = "RJ"
+    elif club_id == "20041": estado = "MS"
+    elif club_id == "35079": estado = "MT"
+    elif club_id == "20353": estado = "RR"
+    elif club_id == "20056": estado = "MA"
+    elif club_id == "32387": estado = "RJ"
+    elif club_id == "20805": estado = "RJ"
+    elif club_id == "63521": estado = "SP"
+    
+    if not estado:
+        for key in sorted(ESTADOS_TIMES.keys(), key=len, reverse=True):
+            if key.lower() in nome_original.lower():
+                estado = ESTADOS_TIMES[key]
+                break
+                
+    if estado:
+        nome = f"{nome} - {estado}"
+        
+    return nome
 
 def processar_tabela_geral():
     times_fase1 = carregar_json("classificacao_fase1.json")
@@ -25,10 +95,12 @@ def processar_tabela_geral():
     
     for t in times_fase1:
         chave = t.get("club_id", t["time"])
+        nome_formatado = limpar_e_adicionar_estado(t["time"], chave)
+        
         tabela_geral[chave] = {
             "club_id": chave,
             "escudo_url": t.get("escudo_url", ""),
-            "time": t["time"],
+            "time": nome_formatado,
             "pontos": t["pontos"],
             "jogos": t["jogos"],
             "vitorias": t["vitorias"],
