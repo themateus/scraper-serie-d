@@ -143,19 +143,8 @@
             100% { opacity: 0.5; }
         }
 
-        /* Champion Highlight */
-        tbody tr:nth-child(1) td {
-            background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, transparent 100%);
-            color: #d4af37;
-        }
-        tbody tr:nth-child(1) td.team-name span { color: #d4af37; font-weight: 800; }
-        tbody tr:nth-child(1) td strong { color: #d4af37; }
+        /* Tabela Colors - Removido os destaques de Campeão e Acesso */
         
-        /* Promotion Highlight */
-        tbody tr:nth-child(2) td, tbody tr:nth-child(3) td, tbody tr:nth-child(4) td {
-            background: linear-gradient(90deg, rgba(0, 230, 118, 0.05) 0%, transparent 100%);
-        }
-
         .shield {
             width: 28px;
             height: 28px;
@@ -169,23 +158,74 @@
             font-weight: 600;
             white-space: nowrap;
         }
-        .status-promoted { background: rgba(0, 230, 118, 0.15); color: #00e676; border: 1px solid rgba(0, 230, 118, 0.3); }
-        .status-playoffs { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
-        .status-eliminated { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+        
+        /* Cores baseadas nas Fases */
+        .status-fase1 { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .status-fase2 { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .status-fase3 { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+        .status-oitavas { background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .status-quartas { background: rgba(236, 72, 153, 0.15); color: #ec4899; border: 1px solid rgba(236, 72, 153, 0.3); }
+        .status-semifinal { background: rgba(0, 230, 118, 0.15); color: #00e676; border: 1px solid rgba(0, 230, 118, 0.3); }
+        .status-final { background: rgba(212, 175, 55, 0.15); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.3); }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .header-top h1 {
+            margin-bottom: 0;
+            font-size: 2rem;
+            text-align: left;
+        }
+
+        .filter-container select {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-dark);
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .filter-container select:focus {
+            border-color: var(--primary);
+        }
 
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Classificação Geral - Série D</h1>
+    <div class="header-top">
+        <h1>Classificação - Série D</h1>
+        <div class="filter-container">
+            <select id="fase-filter">
+                <option value="Todas">Todas as Fases</option>
+                <option value="1ª Fase">Somente Eliminados 1ª Fase</option>
+                <option value="2ª Fase">Chegaram na 2ª Fase</option>
+                <option value="3ª Fase">Chegaram na 3ª Fase</option>
+                <option value="Oitavas">Oitavas de Final</option>
+                <option value="Quartas">Quartas de Final</option>
+                <option value="Semifinal">Semifinal (Acesso)</option>
+                <option value="Final">Finalistas</option>
+            </select>
+        </div>
+    </div>
+    
     <div class="table-responsive">
         <table>
             <thead>
                 <tr>
                     <th>Pos</th>
                     <th class="team-name">Clube</th>
-                    <th>Status</th>
+                    <th>Fase Máx.</th>
                     <th>PTS</th>
                     <th>J</th>
                     <th>V</th>
@@ -204,6 +244,59 @@
 </div>
 
 <script>
+    let globalData = [];
+
+    function getBadgeClass(status) {
+        if (status === '1ª Fase') return 'status-fase1';
+        if (status === '2ª Fase') return 'status-fase2';
+        if (status === '3ª Fase') return 'status-fase3';
+        if (status === 'Oitavas') return 'status-oitavas';
+        if (status === 'Quartas') return 'status-quartas';
+        if (status === 'Semifinal') return 'status-semifinal';
+        if (status === 'Final') return 'status-final';
+        return 'status-fase1';
+    }
+
+    function renderTable(filter) {
+        const tbody = document.getElementById('tabela-corpo');
+        tbody.innerHTML = '';
+        
+        let displayData = globalData;
+        if (filter !== 'Todas') {
+            displayData = globalData.filter(time => time.status === filter);
+        }
+
+        if (displayData.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="11" style="text-align:center; padding:20px; color:#94a3b8;">Nenhum time encontrado para este filtro.</td></tr>';
+            return;
+        }
+
+        displayData.forEach((time, index) => {
+            const tr = document.createElement('tr');
+            tr.style.animationDelay = `${(index % 20) * 0.05}s`; // Limitamos o delay para não ficar lento com muitos times
+            
+            let badgeClass = getBadgeClass(time.status);
+
+            tr.innerHTML = `
+                <td>${index + 1}º</td>
+                <td class="team-name">
+                    ${time.escudo_url ? \`<img src="\${time.escudo_url}" class="shield" alt="Escudo">\` : ''}
+                    <span>${time.time}</span>
+                </td>
+                <td><span class="status-badge ${badgeClass}">${time.status || ''}</span></td>
+                <td><strong>${time.pontos}</strong></td>
+                <td>${time.jogos}</td>
+                <td>${time.vitorias}</td>
+                <td>${time.empates}</td>
+                <td>${time.derrotas}</td>
+                <td>${time.gols_pro}</td>
+                <td>${time.gols_contra}</td>
+                <td>${time.saldo_gols}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
     // Adiciona um timestamp na URL para evitar que o navegador faça cache do JSON antigo
     fetch('tabela_geral.json?v=' + new Date().getTime())
         .then(response => {
@@ -211,41 +304,18 @@
             return response.json();
         })
         .then(data => {
-            const tbody = document.getElementById('tabela-corpo');
-            tbody.innerHTML = '';
-            
-            data.forEach((time, index) => {
-                const tr = document.createElement('tr');
-                tr.style.animationDelay = `${index * 0.05}s`;
-                
-                let badgeClass = 'status-eliminated';
-                if (time.status === 'Acesso à Série C') badgeClass = 'status-promoted';
-                else if (time.status === 'Mata-Mata') badgeClass = 'status-playoffs';
-
-                tr.innerHTML = `
-                    <td>${index + 1}º</td>
-                    <td class="team-name">
-                        ${time.escudo_url ? `<img src="${time.escudo_url}" class="shield" alt="Escudo">` : ''}
-                        <span>${time.time}</span>
-                    </td>
-                    <td><span class="status-badge ${badgeClass}">${time.status || ''}</span></td>
-                    <td><strong>${time.pontos}</strong></td>
-                    <td>${time.jogos}</td>
-                    <td>${time.vitorias}</td>
-                    <td>${time.empates}</td>
-                    <td>${time.derrotas}</td>
-                    <td>${time.gols_pro}</td>
-                    <td>${time.gols_contra}</td>
-                    <td>${time.saldo_gols}</td>
-                `;
-                tbody.appendChild(tr);
-            });
+            globalData = data;
+            renderTable('Todas');
         })
         .catch(error => {
             console.error('Erro ao carregar os dados:', error);
             document.getElementById('tabela-corpo').innerHTML = 
                 '<tr><td colspan="11" style="color: #ef4444; padding: 20px;">Erro ao carregar a tabela. Gere o arquivo JSON primeiro.</td></tr>';
         });
+
+    document.getElementById('fase-filter').addEventListener('change', (e) => {
+        renderTable(e.target.value);
+    });
 </script>
 
 </body>
