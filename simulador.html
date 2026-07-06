@@ -7,23 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #10b981;
-            --primary-dark: #059669;
-            --bg-main: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.65);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            --ge-green: #06aa48;
+            --ge-green-dark: #048c3b;
+            --ge-green-light: #e6f6eb;
+            --bg-page: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --text-light: #999999;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-main);
-            background-image: radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.08), transparent 25%),
-                              radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.08), transparent 25%);
-            background-attachment: fixed;
+            font-family: 'Open Sans', 'Roboto', 'Outfit', sans-serif;
+            background-color: var(--bg-page);
             color: var(--text-main);
             min-height: 100vh;
             padding: 40px 20px;
@@ -33,71 +32,71 @@
             max-width: 1000px;
             margin: 0 auto;
             background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #34d399 0%, #059669 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--ge-green);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
 
         .btn-voltar {
             text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
-            padding: 10px 20px;
-            border: 1px solid var(--primary);
-            border-radius: 12px;
-            transition: all 0.3s;
+            color: var(--text-muted);
+            font-weight: 700;
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
         }
 
         .btn-voltar:hover {
-            background: var(--primary);
-            color: #fff;
+            background: var(--bg-page);
+            color: var(--text-main);
         }
 
         .btn-acao {
-            background: var(--primary);
+            background: var(--ge-green);
             color: #fff;
             border: none;
             padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: 600;
+            border-radius: 4px;
+            font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
-            transition: transform 0.2s, background 0.2s;
-            font-family: 'Outfit', sans-serif;
+            transition: background 0.2s;
             width: 100%;
             margin-top: 20px;
+            text-transform: uppercase;
         }
 
         .btn-acao:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
+            background: var(--ge-green-dark);
         }
 
         .fase-title {
             text-align: center;
-            font-size: 1.5rem;
-            color: var(--text-muted);
+            font-size: 1.3rem;
+            color: var(--text-main);
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid var(--card-border);
+            font-weight: 700;
         }
 
         .match-list {
@@ -107,21 +106,23 @@
         }
 
         .match-card {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
             padding: 15px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
             transition: border-color 0.3s;
         }
 
         .team-row {
             display: grid;
-            grid-template-columns: 1fr 50px 50px;
-            gap: 10px;
+            grid-template-columns: 1fr 45px 45px;
+            gap: 8px;
             align-items: center;
+            padding: 4px 0;
         }
 
         .team-info {
@@ -129,96 +130,103 @@
             align-items: center;
             gap: 10px;
             font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.95rem;
         }
 
         .shield {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             object-fit: contain;
-            background: #fff;
-            border-radius: 50%;
-            padding: 3px;
+            vertical-align: middle;
         }
 
         .score-input {
-            width: 50px;
-            height: 40px;
+            width: 45px;
+            height: 35px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 2px solid var(--primary);
-            color: #fff;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
-            border-radius: 8px;
-            font-size: 1.2rem;
+            background: #f9f9f9;
+            border: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-main);
+            font-family: inherit;
+            font-weight: 700;
+            border-radius: 4px;
+            font-size: 1.1rem;
             transition: all 0.2s ease;
             cursor: text;
         }
 
         .score-input:focus {
             outline: none;
-            border-color: var(--primary);
-            background: rgba(16, 185, 129, 0.1);
-            transform: scale(1.05);
+            border-color: var(--ge-green);
+            border-bottom-color: var(--ge-green);
+            background: #ffffff;
         }
 
         .real-score {
-            background: rgba(16, 185, 129, 0.15) !important;
-            border: 1px solid rgba(16, 185, 129, 0.3) !important;
-            color: #34d399 !important;
+            background: #f0f0f0 !important;
+            border: 1px solid #e0e0e0 !important;
+            color: var(--text-muted) !important;
             cursor: not-allowed;
-            opacity: 0.9;
-            border-bottom: 1px solid rgba(16, 185, 129, 0.3) !important;
+            border-bottom: 1px solid #e0e0e0 !important;
         }
 
         .score-label {
             font-size: 0.7rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 700;
             text-align: center;
         }
         
         .badge-real {
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid rgba(16, 185, 129, 0.6);
-            color: #34d399;
+            background: #f0f0f0;
+            border: 1px solid #dcdcdc;
+            color: var(--text-muted);
             padding: 3px 6px;
             border-radius: 4px;
         }
 
         .badge-sim {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px dashed rgba(255, 255, 255, 0.3);
-            color: #e2e8f0;
+            background: #ffffff;
+            border: 1px dashed var(--ge-green);
+            color: var(--ge-green);
             padding: 3px 6px;
             border-radius: 4px;
         }
 
         .vs {
             text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin: 5px 0;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin: 2px 0;
             grid-column: 1 / -1;
+            font-weight: 600;
         }
 
         .rules-info {
-            margin-top: 30px;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 12px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            background: var(--ge-green-light);
+            border: 1px solid rgba(6, 170, 72, 0.2);
+            border-radius: 6px;
             padding: 15px;
-            color: #38bdf8;
+            color: var(--ge-green-dark);
             font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .rules-info strong {
+            color: var(--ge-green);
         }
 
         #ranking-modal {
             display: none;
-            background: var(--card-bg);
+            background: #ffffff;
             padding: 20px;
-            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             margin-top: 30px;
         }
         
@@ -226,28 +234,32 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 0.9rem;
-            margin-top: 10px;
+            margin-top: 15px;
         }
-        th, td { padding: 8px; text-align: center; border-bottom: 1px solid var(--card-border); }
-        th { color: var(--text-muted); font-weight: 600; }
+        th, td { padding: 12px 8px; text-align: center; border-bottom: 1px solid var(--border-color); }
+        th { color: var(--text-light); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
         .text-left { text-align: left; }
 
         /* Estilos Desempate por Pênaltis */
         .tiebreaker-radio {
-            accent-color: var(--primary);
-            width: 18px;
-            height: 18px;
+            accent-color: var(--ge-green);
+            width: 16px;
+            height: 16px;
             cursor: pointer;
             display: none;
             margin-right: 8px;
         }
         .tiebreaker-alert {
-            color: #f59e0b;
-            font-size: 0.85rem;
+            color: #d97706; /* Amber 600 */
+            font-size: 0.8rem;
             text-align: center;
             margin-top: 10px;
             display: none;
-            font-weight: 600;
+            font-weight: 700;
+            background: #fef3c7;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #fde68a;
         }
     </style>
 </head>
@@ -489,11 +501,11 @@
                 if (radioA.checked) {
                     aggA += 0.1; // Vantagem sutil apenas para passar de fase
                     radioA.style.display = 'inline-block'; radioB.style.display = 'inline-block';
-                    alertMsg.style.display = 'none'; card.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                    alertMsg.style.display = 'none'; card.style.borderColor = 'var(--border-color)';
                 } else if (radioB.checked) {
                     aggB += 0.1;
                     radioA.style.display = 'inline-block'; radioB.style.display = 'inline-block';
-                    alertMsg.style.display = 'none'; card.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                    alertMsg.style.display = 'none'; card.style.borderColor = 'var(--border-color)';
                 } else {
                     // Empate sem vencedor selecionado -> Mostra erro
                     radioA.style.display = 'inline-block';
@@ -506,7 +518,7 @@
                 radioA.style.display = 'none'; radioA.checked = false;
                 radioB.style.display = 'none'; radioB.checked = false;
                 alertMsg.style.display = 'none';
-                card.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                card.style.borderColor = 'var(--border-color)';
             }
             
             resultadosLidos.push({ par, tA, tB, idaA, idaB, volA, volB, aggA, aggB });
