@@ -1131,11 +1131,11 @@
         "jogo": "Jogo 556",
         "mandante_id": "21817",
         "mandante": "Ivinhema Futebol Clube",
-        "placar_mandante": null,
+        "placar_mandante": 1,
         "penaltis_mandante": null,
         "visitante_id": "20108",
         "visitante": "Asa",
-        "placar_visitante": null,
+        "placar_visitante": 2,
         "penaltis_visitante": null,
         "detalhes": "06/07/2026 |  -  | 20:00 |  Ivinhema  |  -  |  MS | Saraivão"
     },
