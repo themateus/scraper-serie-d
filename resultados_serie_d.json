@@ -1266,11 +1266,11 @@
         "jogo": "Jogo 565",
         "mandante_id": "62025",
         "mandante": "America F.c. Saf",
-        "placar_mandante": null,
+        "placar_mandante": 2,
         "penaltis_mandante": null,
         "visitante_id": "20810",
         "visitante": "Trem",
-        "placar_visitante": null,
+        "placar_visitante": 1,
         "penaltis_visitante": null,
         "detalhes": "13/07/2026 |  -  | 20:00 |  Natal  |  -  |  RN | Arena das Dunas"
     },
