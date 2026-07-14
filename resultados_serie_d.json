@@ -1356,11 +1356,11 @@
         "jogo": "Jogo 571",
         "mandante_id": "20045",
         "mandante": "Csa",
-        "placar_mandante": null,
+        "placar_mandante": 4,
         "penaltis_mandante": null,
         "visitante_id": "34709",
         "visitante": "Betim Futebol",
-        "placar_visitante": null,
+        "placar_visitante": 0,
         "penaltis_visitante": null,
         "detalhes": "13/07/2026 |  -  | 20:00 |  Maceio  |  -  |  AL | Rei Pelé"
     },
