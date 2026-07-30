@@ -11,8 +11,8 @@
         "gols_pro": 28,
         "gols_contra": 9,
         "saldo_gols": 19,
-        "fase_nivel": 3,
-        "status": "3ª Fase"
+        "fase_nivel": 5,
+        "status": "Quartas"
     },
     {
         "club_id": "62025",
@@ -56,8 +56,8 @@
         "gols_pro": 21,
         "gols_contra": 9,
         "saldo_gols": 12,
-        "fase_nivel": 3,
-        "status": "3ª Fase"
+        "fase_nivel": 5,
+        "status": "Quartas"
     },
     {
         "club_id": "35361",
@@ -131,8 +131,8 @@
         "gols_pro": 32,
         "gols_contra": 10,
         "saldo_gols": 22,
-        "fase_nivel": 3,
-        "status": "3ª Fase"
+        "fase_nivel": 5,
+        "status": "Quartas"
     },
     {
         "club_id": "20050",
@@ -146,8 +146,8 @@
         "gols_pro": 17,
         "gols_contra": 10,
         "saldo_gols": 7,
-        "fase_nivel": 3,
-        "status": "3ª Fase"
+        "fase_nivel": 5,
+        "status": "Quartas"
     },
     {
         "club_id": "53757",
@@ -176,8 +176,8 @@
         "gols_pro": 19,
         "gols_contra": 9,
         "saldo_gols": 10,
-        "fase_nivel": 3,
-        "status": "3ª Fase"
+        "fase_nivel": 5,
+        "status": "Quartas"
     },
     {
         "club_id": "64223",
@@ -191,8 +191,8 @@
         "gols_pro": 19,
         "gols_contra": 12,
         "saldo_gols": 7,
-        "fase_nivel": 3,
-        "status": "3ª Fase"
+        "fase_nivel": 5,
+        "status": "Quartas"
     },
     {
         "club_id": "20101",
@@ -206,8 +206,8 @@
         "gols_pro": 16,
         "gols_contra": 9,
         "saldo_gols": 7,
-        "fase_nivel": 3,
-        "status": "3ª Fase"
+        "fase_nivel": 5,
+        "status": "Quartas"
     },
     {
         "club_id": "20782",
@@ -506,8 +506,8 @@
         "gols_pro": 9,
         "gols_contra": 10,
         "saldo_gols": -1,
-        "fase_nivel": 3,
-        "status": "3ª Fase"
+        "fase_nivel": 5,
+        "status": "Quartas"
     },
     {
         "club_id": "20081",
