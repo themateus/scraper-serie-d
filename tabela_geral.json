@@ -45,6 +45,21 @@
         "status": "Quartas"
     },
     {
+        "club_id": "64223",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64223%2Fescudo.jpg&w=256&q=70",
+        "time": "Uberlândia - MG",
+        "pontos": 32,
+        "jogos": 16,
+        "vitorias": 9,
+        "empates": 5,
+        "derrotas": 2,
+        "gols_pro": 22,
+        "gols_contra": 12,
+        "saldo_gols": 10,
+        "fase_nivel": 5,
+        "status": "Quartas"
+    },
+    {
         "club_id": "37743",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F37743%2Fescudo.jpg&w=256&q=70",
         "time": "Capital - TO",
@@ -120,32 +135,17 @@
         "status": "3ª Fase"
     },
     {
-        "club_id": "64223",
-        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64223%2Fescudo.jpg&w=256&q=70",
-        "time": "Uberlândia - MG",
-        "pontos": 29,
-        "jogos": 15,
-        "vitorias": 8,
-        "empates": 5,
-        "derrotas": 2,
-        "gols_pro": 20,
-        "gols_contra": 12,
-        "saldo_gols": 8,
-        "fase_nivel": 5,
-        "status": "Quartas"
-    },
-    {
         "club_id": "20045",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20045%2Fescudo.jpg&w=256&q=70",
         "time": "CSA - AL",
         "pontos": 28,
-        "jogos": 15,
+        "jogos": 16,
         "vitorias": 8,
         "empates": 4,
-        "derrotas": 3,
+        "derrotas": 4,
         "gols_pro": 32,
-        "gols_contra": 11,
-        "saldo_gols": 21,
+        "gols_contra": 13,
+        "saldo_gols": 19,
         "fase_nivel": 5,
         "status": "Quartas"
     },
