@@ -1558,5 +1558,35 @@
         "placar_visitante": 2,
         "penaltis_visitante": null,
         "detalhes": "15/08/2026 |  -  | 17:00 |  Maceio  |  -  |  AL | Rei Pelé"
+    },
+    {
+        "nome_fase": "Final",
+        "grupo": "GRUPO G01",
+        "fase": "Ida",
+        "jogo": "Jogo 609",
+        "mandante_id": "20108",
+        "mandante": "Asa",
+        "placar_mandante": null,
+        "penaltis_mandante": null,
+        "visitante_id": "64223",
+        "visitante": "Uberlândia Saf",
+        "placar_visitante": null,
+        "penaltis_visitante": null,
+        "detalhes": "06/09/2026 |  -  | 17:00 |  Arapiraca  |  -  |  AL | Coaracy Fonseca"
+    },
+    {
+        "nome_fase": "Final",
+        "grupo": "GRUPO G01",
+        "fase": "Volta",
+        "jogo": "Jogo 610",
+        "mandante_id": "64223",
+        "mandante": "Uberlândia Saf",
+        "placar_mandante": null,
+        "penaltis_mandante": null,
+        "visitante_id": "20108",
+        "visitante": "Asa",
+        "placar_visitante": null,
+        "penaltis_visitante": null,
+        "detalhes": "13/09/2026 |  -  | 17:00 |  Uberlandia  |  -  |  MG | Parque do Sabiá"
     }
 ]

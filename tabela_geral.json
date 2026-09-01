@@ -56,8 +56,8 @@
         "gols_pro": 22,
         "gols_contra": 12,
         "saldo_gols": 10,
-        "fase_nivel": 5,
-        "status": "Quartas"
+        "fase_nivel": 7,
+        "status": "Final"
     },
     {
         "club_id": "37743",
@@ -161,8 +161,8 @@
         "gols_pro": 20,
         "gols_contra": 10,
         "saldo_gols": 10,
-        "fase_nivel": 5,
-        "status": "Quartas"
+        "fase_nivel": 7,
+        "status": "Final"
     },
     {
         "club_id": "20101",
