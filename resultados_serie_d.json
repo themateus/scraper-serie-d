@@ -1566,11 +1566,11 @@
         "jogo": "Jogo 609",
         "mandante_id": "20108",
         "mandante": "Asa",
-        "placar_mandante": null,
+        "placar_mandante": 0,
         "penaltis_mandante": null,
         "visitante_id": "64223",
         "visitante": "Uberlândia Saf",
-        "placar_visitante": null,
+        "placar_visitante": 2,
         "penaltis_visitante": null,
         "detalhes": "06/09/2026 |  -  | 17:00 |  Arapiraca  |  -  |  AL | Coaracy Fonseca"
     },
