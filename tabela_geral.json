@@ -33,13 +33,13 @@
         "club_id": "64223",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F64223%2Fescudo.jpg&w=256&q=70",
         "time": "Uberlândia - MG",
-        "pontos": 35,
-        "jogos": 17,
+        "pontos": 36,
+        "jogos": 18,
         "vitorias": 10,
-        "empates": 5,
+        "empates": 6,
         "derrotas": 2,
-        "gols_pro": 24,
-        "gols_contra": 12,
+        "gols_pro": 25,
+        "gols_contra": 13,
         "saldo_gols": 12,
         "fase_nivel": 7,
         "status": "Final"
@@ -135,6 +135,21 @@
         "status": "3ª Fase"
     },
     {
+        "club_id": "20108",
+        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20108%2Fescudo.jpg&w=256&q=70",
+        "time": "ASA - AL",
+        "pontos": 29,
+        "jogos": 18,
+        "vitorias": 7,
+        "empates": 8,
+        "derrotas": 3,
+        "gols_pro": 21,
+        "gols_contra": 13,
+        "saldo_gols": 8,
+        "fase_nivel": 7,
+        "status": "Final"
+    },
+    {
         "club_id": "20045",
         "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20045%2Fescudo.jpg&w=256&q=70",
         "time": "CSA - AL",
@@ -148,21 +163,6 @@
         "saldo_gols": 19,
         "fase_nivel": 5,
         "status": "Quartas"
-    },
-    {
-        "club_id": "20108",
-        "escudo_url": "https://www.cbf.com.br/_next/image?url=https%3A%2F%2Fconteudo.cbf.com.br%2Fclubes%2F20108%2Fescudo.jpg&w=256&q=70",
-        "time": "ASA - AL",
-        "pontos": 28,
-        "jogos": 17,
-        "vitorias": 7,
-        "empates": 7,
-        "derrotas": 3,
-        "gols_pro": 20,
-        "gols_contra": 12,
-        "saldo_gols": 8,
-        "fase_nivel": 7,
-        "status": "Final"
     },
     {
         "club_id": "20101",
