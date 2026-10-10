@@ -1,0 +1,27 @@
+[
+    {
+        "jogador": "RIAN",
+        "gols": 10,
+        "time": "Csa-AL"
+    },
+    {
+        "jogador": "Alex Silva",
+        "gols": 9,
+        "time": "Aguia de Maraba-PA"
+    },
+    {
+        "jogador": "Clemente",
+        "gols": 9,
+        "time": "Gama-DF"
+    },
+    {
+        "jogador": "Ruan Costa",
+        "gols": 9,
+        "time": "Gazin Porto Velho-RO"
+    },
+    {
+        "jogador": "Matheus",
+        "gols": 9,
+        "time": "Desconhecido"
+    }
+]
