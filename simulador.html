@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Mata-Mata - Série D 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ge-green: #06aa48;
+            --ge-green-dark: #048c3b;
+            --ge-green-light: #e6f6eb;
+            --bg-page: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --text-light: #999999;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Open Sans', 'Roboto', 'Outfit', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--ge-green);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .btn-voltar {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 700;
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .btn-voltar:hover {
+            background: var(--bg-page);
+            color: var(--text-main);
+        }
+
+        .btn-acao {
+            background: var(--ge-green);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .btn-acao:hover {
+            background: var(--ge-green-dark);
+        }
+
+        .fase-title {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .match-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .match-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            transition: border-color 0.3s;
+        }
+
+        .team-row {
+            display: grid;
+            grid-template-columns: 1fr 45px 45px;
+            gap: 8px;
+            align-items: center;
+            padding: 4px 0;
+        }
+
+        .team-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .shield {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
+        .score-input {
+            width: 45px;
+            height: 35px;
+            text-align: center;
+            background: #f9f9f9;
+            border: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-main);
+            font-family: inherit;
+            font-weight: 700;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            cursor: text;
+        }
+
+        .score-input:focus {
+            outline: none;
+            border-color: var(--ge-green);
+            border-bottom-color: var(--ge-green);
+            background: #ffffff;
+        }
+
+        .real-score {
+            background: #f0f0f0 !important;
+            border: 1px solid #e0e0e0 !important;
+            color: var(--text-muted) !important;
+            cursor: not-allowed;
+            border-bottom: 1px solid #e0e0e0 !important;
+        }
+
+        .score-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .badge-real {
+            background: #f0f0f0;
+            border: 1px solid #dcdcdc;
+            color: var(--text-muted);
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .badge-sim {
+            background: #ffffff;
+            border: 1px dashed var(--ge-green);
+            color: var(--ge-green);
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .vs {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin: 2px 0;
+            grid-column: 1 / -1;
+            font-weight: 600;
+        }
+
+        .rules-info {
+            margin-top: 10px;
+            margin-bottom: 30px;
+            background: var(--ge-green-light);
+            border: 1px solid rgba(6, 170, 72, 0.2);
+            border-radius: 6px;
+            padding: 15px;
+            color: var(--ge-green-dark);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .rules-info strong {
+            color: var(--ge-green);
+        }
+
+        #ranking-modal {
+            display: none;
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+        th, td { padding: 12px 8px; text-align: center; border-bottom: 1px solid var(--border-color); }
+        th { color: var(--text-light); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
+        .text-left { text-align: left; }
+
+        /* Estilos Desempate por Pênaltis */
+        .tiebreaker-radio {
+            accent-color: var(--ge-green);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            display: none;
+            margin-right: 8px;
+        }
+        .tiebreaker-alert {
+            color: #d97706; /* Amber 600 */
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+            font-weight: 700;
+            background: #fef3c7;
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #fde68a;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Simulador Série D</h1>
+        <a href="index.html" class="btn-voltar">← Voltar à Tabela</a>
+    </div>
+
+    <div class="rules-info">
+        <strong>Como funciona a Simulação?</strong><br>
+        Os jogos que já aconteceram e constam no site da CBF aparecem bloqueados (cor verde) e o rótulo da coluna ganha uma <span class="badge-real" style="font-size:0.7rem; display:inline-block; transform:translateY(-1px);">BORDA VERDE CONTÍNUA</span>. 
+        As partidas que ainda faltam ou que você está prevendo ganham uma <span class="badge-sim" style="font-size:0.7rem; display:inline-block; transform:translateY(-1px);">BORDA TRACEJADA</span>, indicando que as caixas brancas estão prontas para receberem seus palpites.<br><br>
+        <strong>Regra de Ouro:</strong> A partir das <strong>Quartas de Final (Jogo do Acesso)</strong>, os confrontos abandonam o chaveamento atual e são redefinidos pela <strong>Campanha Geral</strong> acumulada de todas as fases. O 1º melhor enfrenta o 8º, o 2º enfrenta o 7º, etc. O simulador faz isso automaticamente!
+    </div>
+
+    <h2 class="fase-title" id="fase-label">Carregando dados...</h2>
+
+    <div class="match-list" id="match-container">
+        <!-- Partidas serão injetadas aqui -->
+    </div>
+
+    <button class="btn-acao" id="btn-avancar" style="display: none;" onclick="avancarFase()">Simular Resultados e Avançar Fase</button>
+
+    <div id="ranking-modal">
+        <h3>Classificação Geral Acumulada (Semente para Sorteio)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th class="text-left">Clube</th>
+                    <th>PTS</th>
+                    <th>V</th>
+                    <th>SG</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-body"></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    let times = {}; 
+    let confrontosAtuais = []; 
+    let faseAtualNivel = 2; 
+    
+    const nomesFases = {
+        2: "2ª Fase (32-avos)",
+        3: "3ª Fase (16-avos)",
+        4: "Oitavas de Final",
+        5: "Quartas de Final (Jogo do Acesso!)",
+        6: "Semifinal",
+        7: "Grande Final"
+    };
+
+    const niveisNomes = {
+        "2ª Fase": 2, "3ª Fase": 3, "Oitavas de Final": 4, "Quartas de Final": 5, "Semifinal": 6, "Final": 7
+    };
+
+    async function inicializar() {
+        try {
+            const resTabela = await fetch('tabela_geral.json?v=' + new Date().getTime());
+            const tabelaData = await resTabela.json();
+            
+            tabelaData.forEach(t => {
+                times[t.club_id] = {
+                    id: t.club_id,
+                    nome: t.time,
+                    escudo: t.escudo_url,
+                    pts: t.pontos,
+                    v: t.vitorias,
+                    e: t.empates,
+                    d: t.derrotas,
+                    gp: t.gols_pro,
+                    gc: t.gols_contra,
+                    sg: t.saldo_gols
+                };
+            });
+
+            const resJogos = await fetch('resultados_serie_d.json?v=' + new Date().getTime());
+            const jogosData = await resJogos.json();
+            
+            let maxNivel = 2;
+            let nomeMaxFase = "2ª Fase";
+            jogosData.forEach(j => {
+                let nivel = niveisNomes[j.nome_fase] || 2;
+                if(nivel > maxNivel) {
+                    maxNivel = nivel;
+                    nomeMaxFase = j.nome_fase;
+                }
+            });
+            
+            faseAtualNivel = maxNivel;
+            const jogosFaseAtual = jogosData.filter(j => j.nome_fase === nomeMaxFase);
+            
+            let paresMap = new Map();
+            let matchesCurrent = [];
+            
+            jogosFaseAtual.forEach(j => {
+                let mand = j.mandante_id || j.mandante;
+                let vis = j.visitante_id || j.visitante;
+                let pairId = [mand, vis].sort().join('-');
+                
+                if (!paresMap.has(pairId)) {
+                    let obj = {
+                        pairId: pairId, tA: mand, tB: vis,
+                        ida: { pm: null, pv: null, isReal: false },
+                        volta: { pm: null, pv: null, isReal: false }
+                    };
+                    paresMap.set(pairId, obj);
+                    matchesCurrent.push(obj);
+                }
+                
+                let p = paresMap.get(pairId);
+                if (j.fase === "Ida") {
+                    p.tA = mand; p.tB = vis; 
+                    if(j.placar_mandante !== null) {
+                        p.ida.pm = j.placar_mandante;
+                        p.ida.pv = j.placar_visitante;
+                        p.ida.isReal = true;
+                    }
+                } else if (j.fase === "Volta") {
+                    if(j.placar_mandante !== null) {
+                        p.volta.pm = j.placar_mandante;
+                        p.volta.pv = j.placar_visitante;
+                        p.volta.isReal = true;
+                    }
+                }
+            });
+
+            if (matchesCurrent.length > 0) {
+                confrontosAtuais = matchesCurrent;
+                renderizarFase();
+            } else {
+                document.getElementById('fase-label').innerText = "Dados não encontrados.";
+            }
+
+        } catch (e) {
+            console.error(e);
+            document.getElementById('fase-label').innerText = "Erro ao carregar os dados JSON.";
+        }
+    }
+
+    function renderizarFase() {
+        document.getElementById('fase-label').innerText = nomesFases[faseAtualNivel] || "Fase Desconhecida";
+        const container = document.getElementById('match-container');
+        container.innerHTML = '';
+        
+        confrontosAtuais.forEach((par, index) => {
+            let tA = times[par.tA];
+            let tB = times[par.tB];
+            
+            if(!tA || !tB) return;
+
+            let idaA = par.ida.isReal ? par.ida.pm : '0';
+            let idaB = par.ida.isReal ? par.ida.pv : '0';
+            let volA = par.volta.isReal ? par.volta.pv : '0'; 
+            let volB = par.volta.isReal ? par.volta.pm : '0'; 
+            
+            let idA_attr = par.ida.isReal ? 'disabled class="score-input p1-ida real-score"' : 'class="score-input p1-ida"';
+            let idB_attr = par.ida.isReal ? 'disabled class="score-input p2-ida real-score"' : 'class="score-input p2-ida"';
+            
+            let volA_attr = par.volta.isReal ? 'disabled class="score-input p1-vol real-score"' : 'class="score-input p1-vol"';
+            let volB_attr = par.volta.isReal ? 'disabled class="score-input p2-vol real-score"' : 'class="score-input p2-vol"';
+
+            let classIda = par.ida.isReal ? 'badge-real' : 'badge-sim';
+            let classVolta = par.volta.isReal ? 'badge-real' : 'badge-sim';
+
+            container.innerHTML += `
+                <div class="match-card" data-index="${index}" id="card_${index}">
+                    <div style="display: grid; grid-template-columns: 1fr 50px 50px; gap: 10px; margin-bottom: 5px;">
+                        <div></div>
+                        <div class="score-label ${classIda}" title="${par.ida.isReal ? 'Resultado Oficial' : 'Simule este jogo'}">IDA</div>
+                        <div class="score-label ${classVolta}" title="${par.volta.isReal ? 'Resultado Oficial' : 'Simule este jogo'}">VOLTA</div>
+                    </div>
+                    <div class="team-row">
+                        <div class="team-info">
+                            <input type="radio" name="tiebreaker_${index}" value="tA" class="tiebreaker-radio" title="Marque se este time venceu nos pênaltis">
+                            ${tA.escudo ? `<img src="${tA.escudo}" class="shield">` : ''}
+                            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${tA.nome}">${tA.nome.split(' - ')[0]}</span>
+                        </div>
+                        <input type="number" ${idA_attr} min="0" value="${idaA}">
+                        <input type="number" ${volA_attr} min="0" value="${volA}">
+                    </div>
+                    <div class="vs">MATA-MATA</div>
+                    <div class="team-row">
+                        <div class="team-info">
+                            <input type="radio" name="tiebreaker_${index}" value="tB" class="tiebreaker-radio" title="Marque se este time venceu nos pênaltis">
+                            ${tB.escudo ? `<img src="${tB.escudo}" class="shield">` : ''}
+                            <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${tB.nome}">${tB.nome.split(' - ')[0]}</span>
+                        </div>
+                        <input type="number" ${idB_attr} min="0" value="${idaB}">
+                        <input type="number" ${volB_attr} min="0" value="${volB}">
+                    </div>
+                    <div class="tiebreaker-alert">Empate no agregado! Selecione ao lado do escudo quem venceu nos pênaltis para avançar.</div>
+                </div>
+            `;
+        });
+        
+        document.getElementById('btn-avancar').style.display = 'block';
+        document.getElementById('ranking-modal').style.display = 'none';
+    }
+
+    function avancarFase() {
+        const cards = document.querySelectorAll('.match-card');
+        let resultadosLidos = [];
+        let erro = false;
+        
+        // Fase 1: Leitura e validação de todos os dados da tela (sem alterar estado oficial)
+        cards.forEach((card, i) => {
+            let par = confrontosAtuais[i];
+            let tA = times[par.tA];
+            let tB = times[par.tB];
+
+            let idaA = parseInt(card.querySelector('.p1-ida').value);
+            let idaB = parseInt(card.querySelector('.p2-ida').value);
+            let volA = parseInt(card.querySelector('.p1-vol').value);
+            let volB = parseInt(card.querySelector('.p2-vol').value);
+            
+            if (isNaN(idaA) || isNaN(idaB)) {
+                idaA = Math.floor(Math.random() * 3); idaB = Math.floor(Math.random() * 3);
+                card.querySelector('.p1-ida').value = idaA; card.querySelector('.p2-ida').value = idaB;
+            }
+            if (isNaN(volA) || isNaN(volB)) {
+                volA = Math.floor(Math.random() * 3); volB = Math.floor(Math.random() * 3);
+                card.querySelector('.p1-vol').value = volA; card.querySelector('.p2-vol').value = volB;
+            }
+            
+            let aggA = idaA + volA;
+            let aggB = idaB + volB;
+            
+            let radioA = card.querySelector(`input[name="tiebreaker_${i}"][value="tA"]`);
+            let radioB = card.querySelector(`input[name="tiebreaker_${i}"][value="tB"]`);
+            let alertMsg = card.querySelector('.tiebreaker-alert');
+
+            if (aggA === aggB) {
+                if (radioA.checked) {
+                    aggA += 0.1; // Vantagem sutil apenas para passar de fase
+                    radioA.style.display = 'inline-block'; radioB.style.display = 'inline-block';
+                    alertMsg.style.display = 'none'; card.style.borderColor = 'var(--border-color)';
+                } else if (radioB.checked) {
+                    aggB += 0.1;
+                    radioA.style.display = 'inline-block'; radioB.style.display = 'inline-block';
+                    alertMsg.style.display = 'none'; card.style.borderColor = 'var(--border-color)';
+                } else {
+                    // Empate sem vencedor selecionado -> Mostra erro
+                    radioA.style.display = 'inline-block';
+                    radioB.style.display = 'inline-block';
+                    alertMsg.style.display = 'block';
+                    card.style.borderColor = '#f59e0b';
+                    erro = true;
+                }
+            } else {
+                radioA.style.display = 'none'; radioA.checked = false;
+                radioB.style.display = 'none'; radioB.checked = false;
+                alertMsg.style.display = 'none';
+                card.style.borderColor = 'var(--border-color)';
+            }
+            
+            resultadosLidos.push({ par, tA, tB, idaA, idaB, volA, volB, aggA, aggB });
+        });
+        
+        // Se houver algum empate pendente, paramos antes de alterar a Campanha Geral.
+        if(erro) return;
+
+        let vencedores = [];
+
+        // Fase 2: Aplicar os resultados validados à Campanha Geral e salvar os vencedores
+        resultadosLidos.forEach(res => {
+            let { par, tA, tB, idaA, idaB, volA, volB, aggA, aggB } = res;
+
+            if(!par.ida.isReal) {
+                tA.gp += idaA; tA.gc += idaB; tA.sg += (idaA - idaB);
+                tB.gp += idaB; tB.gc += idaA; tB.sg += (idaB - idaA);
+                if(idaA > idaB) { tA.v++; tA.pts+=3; }
+                else if(idaB > idaA) { tB.v++; tB.pts+=3; }
+                else { tA.pts+=1; tB.pts+=1; }
+            }
+            if(!par.volta.isReal) {
+                tA.gp += volA; tA.gc += volB; tA.sg += (volA - volB);
+                tB.gp += volB; tB.gc += volA; tB.sg += (volB - volA);
+                if(volA > volB) { tA.v++; tA.pts+=3; }
+                else if(volB > volA) { tB.v++; tB.pts+=3; }
+                else { tA.pts+=1; tB.pts+=1; }
+            }
+            
+            if (aggA > aggB) {
+                vencedores.push(tA);
+            } else {
+                vencedores.push(tB);
+            }
+        });
+
+        if (vencedores.length === 1) {
+            alert(`PARABÉNS! ${vencedores[0].nome} É O GRANDE CAMPEÃO!`);
+            document.getElementById('btn-avancar').style.display = 'none';
+            return;
+        }
+
+        if(faseAtualNivel === 4) {
+            alert("Atenção: Os próximos vencedores garantirão o ACESSO À SÉRIE C!");
+        } else if (faseAtualNivel === 5) {
+            alert("ACESSO DEFINIDO! Estes 4 times estariam na Série C!");
+        }
+
+        let vencedores_rankeados = [...vencedores];
+        vencedores_rankeados.sort((a, b) => {
+            if (b.pts !== a.pts) return b.pts - a.pts;
+            if (b.v !== a.v) return b.v - a.v;
+            if (b.sg !== a.sg) return b.sg - a.sg;
+            return b.gp - a.gp;
+        });
+        
+        mostrarRanking(vencedores_rankeados);
+        
+        let novosConfrontos = [];
+        let n = vencedores.length;
+        
+        if (faseAtualNivel >= 4) {
+            for(let i=0; i < n/2; i++) {
+                novosConfrontos.push({
+                    tA: vencedores_rankeados[n - 1 - i].id,
+                    tB: vencedores_rankeados[i].id,
+                    ida: { pm: null, pv: null, isReal: false },
+                    volta: { pm: null, pv: null, isReal: false }
+                });
+            }
+        } else {
+            for(let i=0; i < n; i+=2) {
+                let v1 = vencedores[i];
+                let v2 = vencedores[i+1];
+                let melhor = v1;
+                let pior = v2;
+                
+                if (v2.pts > v1.pts || 
+                   (v2.pts === v1.pts && v2.v > v1.v) ||
+                   (v2.pts === v1.pts && v2.v === v1.v && v2.sg > v1.sg) ||
+                   (v2.pts === v1.pts && v2.v === v1.v && v2.sg === v1.sg && v2.gp > v1.gp)) {
+                    melhor = v2;
+                    pior = v1;
+                }
+                
+                novosConfrontos.push({
+                    tA: pior.id,
+                    tB: melhor.id,
+                    ida: { pm: null, pv: null, isReal: false },
+                    volta: { pm: null, pv: null, isReal: false }
+                });
+            }
+        }
+        
+        confrontosAtuais = novosConfrontos;
+        faseAtualNivel++;
+        
+        setTimeout(() => {
+            renderizarFase();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 4000); 
+    }
+    
+    function mostrarRanking(vencedores) {
+        document.getElementById('ranking-modal').style.display = 'block';
+        const tbody = document.getElementById('ranking-body');
+        tbody.innerHTML = '';
+        vencedores.forEach((t, i) => {
+            tbody.innerHTML += `
+                <tr>
+                    <td>${i+1}º</td>
+                    <td class="text-left">${t.nome}</td>
+                    <td><strong>${t.pts}</strong></td>
+                    <td>${t.v}</td>
+                    <td>${t.sg}</td>
+                </tr>
+            `;
+        });
+        
+        let txt = faseAtualNivel >= 4 ? 'Cruzando as chaves das Quartas pelo Ranking Geral (Campanha)...' : 'Avançando as Oitavas no Chaveamento Fixo...';
+        document.getElementById('match-container').innerHTML = `<h3 style="color:var(--primary); text-align:center; width:100%; padding:30px;">${txt}</h3>`;
+        document.getElementById('btn-avancar').style.display = 'none';
+    }
+
+    window.onload = inicializar;
+</script>
+</body>
+</html>
